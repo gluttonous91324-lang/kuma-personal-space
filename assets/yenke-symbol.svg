@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="彥克個人創作風格圖騰，幾何飛鳥與星芒">
+<rect width="240" height="240" fill="#f2f3f1"/><rect x="16" y="16" width="208" height="208" fill="none" stroke="#3b4040" stroke-width="1.5"/>
+<g fill="#242829">
+<path d="M32 122 55 65 108 114 124 145 93 140 68 158Z"/>
+<path d="M117 113 192 54 184 125 142 149 126 141Z"/>
+<path d="M90 125 113 106 138 133 124 176 111 197 113 157Z"/>
+<path d="m179 162 6-16 6 16 16 6-16 5-6 17-6-17-17-5Z"/>
+<path d="m62 180 3-9 3 9 9 3-9 3-3 10-3-10-10-3Z"/>
+</g>
+<g fill="none" stroke="#f2f3f1" stroke-width="5" stroke-linecap="round"><path d="M56 91 103 134"/><path d="M178 85 134 131"/></g>
+<circle cx="159" cy="188" r="2.5" fill="#5f6765"/><path d="M23 23h23M23 23v23M217 217h-23M217 217v-23" fill="none" stroke="#737c78" stroke-width="2"/>
+</svg>
