@@ -1,0 +1,85 @@
+
+/* Kuma Personal Space — quiet interaction layer */
+:root{--focus:#d7e2bd}
+.panel .section-intro{max-width:68ch}
+.interactive-note{display:flex;align-items:center;gap:9px;font-size:11px;color:#a7b5a0;letter-spacing:.06em;margin:0 0 18px}
+.interactive-note::before{content:"↗";font-size:16px;color:#c8d9b4}
+.timeline-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative;margin:25px 0 18px}
+.timeline-track::before{content:"";position:absolute;left:11%;right:11%;top:10px;border-top:1px solid #536357;z-index:0}
+.timeline-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;border:0;background:none;color:#aeb9ae;padding:0 10px 0 0;min-width:0;transition:color .2s}
+.timeline-step:focus-visible,.ai-tab:focus-visible,.work-thumb:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+.timeline-step::before{content:"";display:block;width:17px;height:17px;border-radius:50%;border:2px solid #708074;background:#212725;box-shadow:0 0 0 5px #202625;transition:background .25s,transform .25s}
+.timeline-step:hover::before{transform:scale(1.12)}
+.timeline-step[aria-pressed="true"]{color:#eff3e8}
+.timeline-step[aria-pressed="true"]::before{background:#c5d5b5;border-color:#d9e5cb}
+.timeline-step .year{font-family:Georgia,serif;font-size:13px;color:#c6d3b9}
+.timeline-step .stage{font-size:14px;line-height:1.4;font-weight:600}
+.timeline-step .duration{font-size:11px;line-height:1.3;color:#8e9b8e}
+.timeline-detail{background:#1a201f;border:1px solid #45544b;padding:21px 22px 19px;min-height:168px;position:relative;overflow:hidden}
+.timeline-detail::after{content:"";position:absolute;width:96px;height:96px;border:1px solid #36463b;transform:rotate(45deg);top:-70px;right:-18px}
+.timeline-detail .small-label{color:#91a28f;letter-spacing:.19em;font-size:10px}
+.timeline-detail h3{font-size:21px;font-weight:500;margin:11px 0 9px;color:#ebf0e4}
+.timeline-detail p{font-size:13px;margin:0;max-width:65ch;line-height:1.85;color:#c1cdc0}
+.timeline-detail.is-changing>*{animation:detail-in .29s ease both}
+@keyframes detail-in{from{opacity:.15;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 15px}
+.interest{background:#1c2220;border:1px solid #435047;color:#dfe5d9;transition:border-color .2s,background .2s}
+.interest[open]{border-color:#8fa68e;background:#26312b}
+.interest summary{list-style:none;cursor:pointer;padding:17px 17px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.interest summary::-webkit-details-marker{display:none}
+.interest summary .label{font-size:14px;font-weight:500}
+.interest summary .mini{font-size:10px;color:#9aab99;display:block;margin-top:5px;letter-spacing:.07em}
+.interest summary .plus{font-size:23px;font-weight:200;color:#b5c8b1;transition:transform .2s}
+.interest[open] .plus{transform:rotate(45deg)}
+.interest .interest-body{padding:0 16px 16px;color:#c5cec3;font-size:12px;line-height:1.85}
+.interest .interest-body strong{font-weight:500;color:#e4e9df}
+.work-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:18px 0}
+.work-thumb{background:#1b201e;color:#e4e9e2;border:1px solid #475249;text-align:left;padding:0;overflow:hidden;transition:transform .22s,border-color .22s}
+.work-thumb:hover{transform:translateY(-3px);border-color:#b1c3ad}
+.work-thumb img{width:100%;height:138px;object-fit:cover;display:block;filter:saturate(.68);transition:transform .3s}
+.work-thumb:hover img{transform:scale(1.03)}
+.work-thumb span{display:block;font-size:11px;line-height:1.5;padding:9px 11px 10px}
+.work-thumb small{display:block;color:#9bac99;font-size:10px;padding-top:3px}
+.work-hint{font-size:11px;color:#a4b49f!important;margin-top:11px!important}
+.ai-tabs{display:flex;gap:6px;margin:20px 0 0;flex-wrap:wrap}
+.ai-tab{background:#1b2320;color:#bac7b8;border:1px solid #45544a;padding:11px 13px;font-size:12px;transition:background .18s,color .18s}
+.ai-tab[aria-selected="true"]{background:#c5d3b8;color:#1c251c;border-color:#c5d3b8}
+.ai-detail{border:1px solid #506053;background:#1a211e;padding:19px 20px;min-height:170px}
+.ai-detail h3{margin:8px 0 10px;font-size:22px;font-weight:500;color:#eaf0e4}
+.ai-detail p{color:#c3cdc2;margin:0;font-size:13px;line-height:1.85}
+.ai-detail .small-label{font-size:10px;color:#aab9a5;letter-spacing:.16em}
+.ai-detail.is-changing>*{animation:detail-in .28s ease both}
+.gallery-dialog{width:min(740px,94vw);max-width:94vw;background:#1d2421;color:#dce5da;border:1px solid #829181;padding:0;box-shadow:0 20px 90px #000b}
+.gallery-dialog::backdrop{background:#030706dd}
+.gallery-dialog header{padding:13px 16px;border-bottom:1px solid #465148;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.11em}
+.gallery-dialog button{background:#263229;color:#e7eddf;border:1px solid #607364;cursor:pointer;padding:7px 12px}
+.gallery-dialog .gallery-body{padding:18px}
+.gallery-dialog img{width:100%;height:min(46vh,420px);object-fit:contain;background:#111716;display:block}
+.gallery-dialog h3{font-size:18px;font-weight:500;margin:15px 0 7px}
+.gallery-dialog p{font-size:12px;color:#b3c2b5;line-height:1.8;margin:0 0 13px}
+.gallery-dialog .gallery-actions{display:flex;justify-content:space-between;gap:10px}
+.gallery-dialog .gallery-actions button{min-width:95px}
+@media(max-width:700px){
+.timeline-track{margin-top:19px}
+.timeline-step{padding-right:3px;gap:6px}
+.timeline-step .year{font-size:11px}
+.timeline-step .stage{font-size:12px}
+.timeline-step .duration{font-size:10px}
+.timeline-detail{min-height:195px;padding:17px}
+.timeline-detail h3{font-size:19px}
+.interest-grid{grid-template-columns:1fr 1fr;gap:7px}
+.interest summary{padding:11px 10px}
+.interest summary .label{font-size:12px}
+.interest summary .mini{font-size:9px}
+.interest .interest-body{padding:0 10px 12px}
+.work-wall{gap:6px}
+.work-thumb img{height:92px}
+.work-thumb span{font-size:10px;padding:8px 6px}
+.ai-tab{flex:1 1 27%;font-size:11px;padding:10px 6px}
+}
+@media(max-width:360px){
+.timeline-step .year{font-size:10px}
+.timeline-step .stage{font-size:11px}
+.work-thumb img{height:75px}
+}
+@media(prefers-reduced-motion:reduce){.timeline-detail.is-changing>*,.ai-detail.is-changing>*{animation:none!important}}
