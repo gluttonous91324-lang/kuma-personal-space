@@ -1,0 +1,73 @@
+/* COLOR EDITION — warm Japanese editorial accents; preserves original layout and interactions. */
+/* Palette: charcoal #171b1d / ivory #f1ede3 / soft vermilion #eda184 / mist blue #96c6ce */
+:root{--ink:#f1ede3;--muted:#bbbfb7;--bg:#171b1d;--surface:#242b2c;--warm:#eda184;--paper:#f1ede3;--focus:#f4d1a7;--accent-coral:#eda184;--accent-blue:#96c6ce;--accent-sand:#e9cda2}
+body{background:#171b1d;color:var(--ink)}
+.top{background:#1b2022;border-bottom-color:#394445;color:#deddd5}
+.led{background:#96c6ce;box-shadow:0 0 0 3px #96c6ce18}
+.eyebrow{color:var(--accent-blue)}
+.hero h1 i{color:var(--accent-coral)}
+.statement{color:#eee9df}
+.tiny{color:#adb6b1}
+.content-window{background:#242b2c;border-color:#6b7773;box-shadow:14px 14px 0 #101516}
+.window-bar{background:#2b3434;color:#e4e3da;border-bottom-color:#515d58}
+.dots span{border-color:#818e89}
+.dots span:first-child{background:#eda184;border-color:#eda184}
+.dots span:nth-child(2){background:#e9cda2;border-color:#e9cda2}
+.dots span:nth-child(3){background:#96c6ce;border-color:#96c6ce}
+.panel p{color:#d1d3cb}
+.panel h2{color:#f6f0e7}
+.panel .overline{color:var(--accent-blue)}
+.profile{background:#22292a;border-color:#52615d}
+.portrait{background:#373f3e}
+.avatar{color:#f0b29c}
+.profile-text .overline{color:#9ccbd1}
+.profile-text h2{color:#f3eee5}
+.profile-text p{color:#ced3c9}
+.tile{--tile-accent:var(--accent-coral);background:#283031;border-color:#56615d;color:#eee9e1}
+.tile:nth-child(even){--tile-accent:var(--accent-blue)}
+.tile .number,.tile .symbol{color:var(--tile-accent)}
+.tile .name{color:#f0eee7}
+.tile:hover{border-color:var(--tile-accent);background:#333c3b}
+.tile[aria-pressed="true"]{background:#f0dfc9;color:#292b2a;border-color:#f0dfc9}
+.tile[aria-pressed="true"] .number,.tile[aria-pressed="true"] .symbol,.tile[aria-pressed="true"] .name{color:#292b2a}
+.gallery{background:#242b2a}
+.gallery .cap{background:linear-gradient(transparent,#171b1deb);color:#efe5d7}
+.interactive-note{color:#bed0ca}
+.interactive-note::before{color:var(--accent-coral)}
+.timeline-track::before{border-top-color:#698281}
+.timeline-step{color:#c8ccc3}
+.timeline-step::before{background:#242b2c;box-shadow:0 0 0 5px #242b2c;border-color:#95b8b5}
+.timeline-step[aria-pressed="true"]::before{background:var(--accent-coral);border-color:#f6c4ad}
+.timeline-step[aria-pressed="true"]{color:#fff4ea}
+.timeline-step .year{color:var(--accent-blue)}
+.timeline-step[aria-pressed="true"] .year{color:#f4b59c}
+.timeline-step .duration{color:#abb9b5}
+.timeline-detail{background:#202829;border-color:#617574;border-left:3px solid var(--accent-coral)}
+.timeline-detail .small-label{color:var(--accent-blue)}
+.timeline-detail h3{color:#f3ede4}
+.timeline-detail p{color:#d4d9d3}
+.timeline-detail::after{border-color:#42595b}
+.interest{background:#232c2c;border-color:#52645f;color:#eeece3}
+.interest[open]{border-color:var(--accent-blue);background:#2c3636}
+.interest summary .mini{color:#a9c9c9}
+.interest summary .plus{color:var(--accent-coral)}
+.interest .interest-body{color:#d8ded7}
+.work-thumb{background:#212a2b;border-color:#5a6761;color:#f5ede0}
+.work-thumb:hover{border-color:var(--accent-coral)}
+.work-thumb small{color:#a9c9c9}
+.work-hint{color:#b4c3bd!important}
+.ai-tab{background:#232d2d;border-color:#566563;color:#e1e7df}
+.ai-tab[aria-selected="true"]{background:var(--accent-blue);color:#172b2c;border-color:var(--accent-blue)}
+.ai-detail{background:#202829;border-color:#5e7370;border-left:3px solid var(--accent-blue)}
+.ai-detail .small-label{color:#a9d2d6}
+.ai-detail h3{color:#f2ede4}
+.ai-detail p{color:#d2d8d1}
+.gallery-dialog{background:#202929;border-color:#8ca3a1}
+.gallery-dialog header{border-bottom-color:#667975;color:#e9e9dc}
+.gallery-dialog button{background:#32403f;border-color:#7c9996}
+.gallery-dialog button:hover{border-color:var(--accent-coral)}
+.gallery-dialog p{color:#d2dbd4}
+.view-more{border-color:#9cc6cc}
+.view-more:hover{background:#375154}
+.foot{color:#abb5ae;border-top-color:#566260}
+@media(max-width:900px){.content-window{box-shadow:8px 8px 0 #101516}}
