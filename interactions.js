@@ -134,9 +134,56 @@
     });
   }
   function setupInterests(){
-    const cards=[...document.querySelectorAll('.interest')];
+    const cards=[...document.querySelectorAll('.interest[data-interest]')];
+    const imgOne=document.getElementById('interest-photo-one');
+    const imgTwo=document.getElementById('interest-photo-two');
+    const labelOne=document.getElementById('interest-caption-one');
+    const labelTwo=document.getElementById('interest-caption-two');
+    const gallery=document.getElementById('lifestyle-preview');
+    if(!cards.length||!imgOne||!imgTwo||!gallery)return;
+    const previews={
+      overview:[
+        {src:'assets/bags.svg',alt:'選物與包款概念示意',caption:'選物與穿搭'},
+        {src:'assets/space.svg',alt:'居家空間與收納概念示意',caption:'空間與設計'}
+      ],
+      japan:[
+        {src:'assets/lifestyle-japan.svg',alt:'日本旅行與折紙概念插畫',caption:'日本旅行'},
+        {src:'assets/lifestyle-city.svg',alt:'日本城市街景與選物空間插畫',caption:'城市與選物'}
+      ],
+      reading:[
+        {src:'assets/lifestyle-reading.svg',alt:'閱讀書本的概念插畫',caption:'閱讀'},
+        {src:'assets/lifestyle-ideas.svg',alt:'閱讀筆記與思考的概念插畫',caption:'思考與筆記'}
+      ],
+      exercise:[
+        {src:'assets/lifestyle-rope.svg',alt:'跳繩運動的概念插畫',caption:'跳繩'},
+        {src:'assets/lifestyle-training.svg',alt:'核心訓練的概念插畫',caption:'核心訓練'}
+      ],
+      home:[
+        {src:'assets/lifestyle-home.svg',alt:'SUS 收納架的構造插畫',caption:'SUS 收納'},
+        {src:'assets/space.svg',alt:'模組化居家空間概念示意',caption:'居家配置'}
+      ]
+    };
+    let current='overview';
+    function updateGallery(key){
+      if(key===current||!previews[key])return;
+      current=key;
+      const [first,second]=previews[key];
+      imgOne.src=first.src;
+      imgOne.alt=first.alt;
+      imgTwo.src=second.src;
+      imgTwo.alt=second.alt;
+      labelOne.textContent=first.caption;
+      labelTwo.textContent=second.caption;
+      gallery.classList.remove('is-updating');
+      void gallery.offsetWidth;
+      gallery.classList.add('is-updating');
+    }
     cards.forEach(card=>card.addEventListener('toggle',()=>{
-      if(card.open)cards.filter(other=>other!==card).forEach(other=>other.open=false);
+      if(card.open){
+        cards.filter(other=>other!==card&&other.open).forEach(other=>{other.open=false;});
+      }
+      const active=cards.find(other=>other.open);
+      updateGallery(active?.dataset.interest||'overview');
     }));
   }
   function init(){
