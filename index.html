@@ -28,8 +28,8 @@
 <span class="overline">JAPAN / STYLE / EVERYDAY</span><h2>生活中喜歡的事</h2>
 <p class="section-intro">日本旅行、男裝包款、閱讀、運動與居家美感；有些興趣只是欣賞，有些則忍不住想親自動手研究。</p>
 <div class="photo-grid lifestyle-preview" id="lifestyle-preview" aria-label="生活興趣圖片展示">
-  <figure class="preview-shot"><img id="interest-photo-one" src="assets/bags.svg" alt="選物與包款示意圖" loading="lazy"><figcaption id="interest-caption-one">選物與穿搭</figcaption></figure>
-  <figure class="preview-shot"><img id="interest-photo-two" src="assets/space.svg" alt="居家空間與收納示意圖" loading="lazy"><figcaption id="interest-caption-two">空間與設計</figcaption></figure>
+  <figure class="preview-shot"><img id="interest-photo-one" src="assets/portrait-bag.webp" alt="彥克背斜背帶的生活照片" loading="lazy"><figcaption id="interest-caption-one">我的日常</figcaption></figure>
+  <figure class="preview-shot"><img id="interest-photo-two" src="assets/bag-detail.webp" alt="男士皮革包款的實拍照片" loading="lazy"><figcaption id="interest-caption-two">包款與細節</figcaption></figure>
 </div>
 <p class="interactive-note">點開感興趣的主題</p>
 <div class="interest-grid">
@@ -74,4 +74,4 @@
 <dialog class="gallery-dialog" id="work-gallery-modal" aria-labelledby="gallery-view-title"><header><span>PERSONAL WORKS · <span id="gallery-counter">1 / 3</span></span><button type="button" id="gallery-close" aria-label="關閉作品視窗">關閉 ×</button></header><div class="gallery-body"><img id="gallery-view-image" src="assets/design.svg" alt="作品示意圖"><h3 id="gallery-view-title">Coffee Grinder</h3><p id="gallery-view-description">作品說明</p><div class="gallery-actions"><button type="button" id="gallery-prev" aria-label="上一件作品">← 上一件</button><button type="button" id="gallery-next" aria-label="下一件作品">下一件 →</button></div></div></dialog>
 <script>
 (()=>{'use strict';const panels=[...document.querySelectorAll('.panel')],tiles=[...document.querySelectorAll('.tile')];const labels={about:'01 / ABOUT ME',lifestyle:'02 / LIFESTYLE',works:'03 / MY WORKS',ai:'04 / AI LAB'};function open(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tiles.forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.target===id)));document.getElementById('window-name').textContent=labels[id];if(innerWidth<901)document.querySelector('.content-window').scrollIntoView({behavior:'smooth',block:'start'});}tiles.forEach(t=>t.addEventListener('click',()=>open(t.dataset.target)));})();
-</script><script src="interactions.js?v=career-3" defer></script></body></html>
+</script><script src="interactions.js?v=photo-20261110" defer></script></body></html>
