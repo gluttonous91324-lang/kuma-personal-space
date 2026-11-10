@@ -133,24 +133,24 @@
     if(!cards.length||!imgOne||!imgTwo||!gallery)return;
     const previews={
       overview:[
-        {src:'assets/bags.svg',alt:'選物與包款概念示意',caption:'選物與穿搭'},
-        {src:'assets/space.svg',alt:'居家空間與收納概念示意',caption:'空間與設計'}
+        {src:'assets/portrait-bag.webp',alt:'彥克身穿外套、背著斜背帶的生活照片',caption:'我的日常'},
+        {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'包款與細節'}
       ],
       japan:[
-        {src:'assets/lifestyle-japan.svg',alt:'日本旅行與折紙概念插畫',caption:'日本旅行'},
-        {src:'assets/lifestyle-city.svg',alt:'日本城市街景與選物空間插畫',caption:'城市與選物'}
+        {src:'assets/japan-select.webp',alt:'日本 IKEDA SELECT 選物店招牌照片',caption:'日本選物'},
+        {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'包款與材質'}
       ],
       reading:[
-        {src:'assets/lifestyle-reading.svg',alt:'閱讀書本的概念插畫',caption:'閱讀'},
-        {src:'assets/lifestyle-ideas.svg',alt:'閱讀筆記與思考的概念插畫',caption:'思考與筆記'}
+        {src:'assets/lifestyle-reading.svg',alt:'閱讀書本的概念插畫，尚無實際照片',caption:'閱讀（插畫）'},
+        {src:'assets/lifestyle-ideas.svg',alt:'閱讀筆記與思考的概念插畫，尚無實際照片',caption:'思考（插畫）'}
       ],
       exercise:[
-        {src:'assets/lifestyle-rope.svg',alt:'跳繩運動的概念插畫',caption:'跳繩'},
-        {src:'assets/lifestyle-training.svg',alt:'核心訓練的概念插畫',caption:'核心訓練'}
+        {src:'assets/jump-rope.webp',alt:'個人使用的跳繩握柄照片',caption:'跳繩器材'},
+        {src:'assets/lifestyle-training.svg',alt:'核心訓練的概念插畫',caption:'核心訓練（插畫）'}
       ],
       home:[
-        {src:'assets/lifestyle-home.svg',alt:'SUS 收納架的構造插畫',caption:'SUS 收納'},
-        {src:'assets/space.svg',alt:'模組化居家空間概念示意',caption:'居家配置'}
+        {src:'assets/sus-storage.webp',alt:'親自規劃與整理的 SUS 金屬收納架照片',caption:'SUS 收納實作'},
+        {src:'assets/room-style.webp',alt:'個人房間空間配置參考照片',caption:'居家配置'}
       ]
     };
     let current='overview';
