@@ -64,3 +64,13 @@
 .timeline-step .stage{font-size:12px}
 .timeline-step .duration{font-size:10px}
 }
+
+
+/* Tiny editorial photo previews — cards stay text-first; full visuals still switch above. */
+.interest summary > span:first-child{flex:1 1 auto;min-width:0}
+.interest-thumb{display:block;width:76px;height:52px;object-fit:cover;object-position:center;flex:0 0 76px;border:1px solid #d8dcd8;background:#f1f2f0;filter:saturate(.78);transition:filter .2s ease,transform .2s ease}
+.interest[open] .interest-thumb{filter:saturate(.94);transform:scale(1.025)}
+.interest summary .plus{flex:0 0 18px;text-align:right}
+@media(max-width:700px){.interest summary{gap:5px}.interest-thumb{width:50px;height:44px;flex-basis:50px}.interest summary .plus{font-size:19px;flex-basis:14px}}
+@media(max-width:390px){.interest-thumb{width:42px;height:40px;flex-basis:42px}.interest summary .label{font-size:11px}.interest summary .mini{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.interest-thumb{transition:none}.interest[open] .interest-thumb{transform:none}}
