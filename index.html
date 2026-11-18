@@ -71,6 +71,18 @@
 .curiosity-detail h3{font-size:21px;font-weight:500;margin:7px 0;color:#252b2d}
 .panel .curiosity-detail p{font-size:13px;line-height:1.8;margin:0;color:#4e5658}
 @media(prefers-reduced-motion:reduce){.curiosity-dot{transition:none}}
+
+/* Selected stars reveal their subject-specific line icon; fixed slots prevent label movement. */
+.curiosity-node{gap:4px}
+.curiosity-symbol{position:relative;display:grid;place-items:center;width:30px;height:30px;flex:none}
+.curiosity-symbol .curiosity-dot{grid-area:1/1;transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease}
+.curiosity-icon{grid-area:1/1;display:block;width:27px;height:27px;opacity:0;color:#f1d3aa;transform:scale(.65);transition:opacity .2s ease,transform .23s ease;filter:drop-shadow(0 0 6px #ecc99a70);pointer-events:none}
+.curiosity-node[aria-pressed=true] .curiosity-dot,.curiosity-node:hover .curiosity-dot,.curiosity-node:focus-visible .curiosity-dot{opacity:0;transform:scale(.5)}
+.curiosity-node[aria-pressed=true] .curiosity-icon,.curiosity-node:hover .curiosity-icon,.curiosity-node:focus-visible .curiosity-icon{opacity:1;transform:scale(1)}
+.curiosity-node.core .curiosity-icon{width:30px;height:30px}
+.curiosity-node[aria-pressed=true]{z-index:2}
+@media(max-width:500px){.curiosity-symbol{width:26px;height:26px}.curiosity-icon{width:24px;height:24px}.curiosity-node.core .curiosity-icon{width:27px;height:27px}}
+@media(prefers-reduced-motion:reduce){.curiosity-icon,.curiosity-symbol .curiosity-dot{transition:none}}
 </style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
@@ -151,14 +163,14 @@
 <span class="overline">EXPLORATION / IDEAS / UNKNOWN</span><h2>對未知保持好奇</h2>
 <p class="section-intro">除了工作與生活，也喜歡探索陌生的事物與尚未找到答案的問題。</p>
 <div class="curiosity-map" role="group" aria-label="好奇心主題探索">
-<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" class="curiosity-lines"><g fill="none" stroke="#88a6b5" stroke-width=".22" stroke-dasharray="1 1.5" opacity=".6"><path d="M18 18L50 12L82 18L82 82L50 88L18 82Z"/><path d="M18 18L50 50L50 12M82 18L50 50L82 82M18 82L50 50L50 88"/><ellipse cx="50" cy="50" rx="40" ry="36"/></g><g fill="#c6d5df" opacity=".65"><circle cx="10" cy="40" r=".4"/><circle cx="35" cy="31" r=".3"/><circle cx="72" cy="42" r=".6"/><circle cx="91" cy="54" r=".4"/><circle cx="38" cy="70" r=".3"/><circle cx="63" cy="68" r=".45"/><circle cx="8" cy="65" r=".35"/><circle cx="95" cy="9" r=".4"/><circle cx="27" cy="94" r=".4"/></g></svg>
-<button type="button" class="curiosity-node" style="--x:18%;--y:18%" data-curiosity="0" aria-pressed="false"><span class="curiosity-dot"></span><span>外星人</span></button>
-<button type="button" class="curiosity-node" style="--x:50%;--y:12%" data-curiosity="1" aria-pressed="false"><span class="curiosity-dot"></span><span>獵奇</span></button>
-<button type="button" class="curiosity-node" style="--x:82%;--y:18%" data-curiosity="2" aria-pressed="false"><span class="curiosity-dot"></span><span>模型</span></button>
-<button type="button" class="curiosity-node core" style="--x:50%;--y:50%" data-curiosity="3" aria-pressed="true"><span class="curiosity-dot"></span><span>未知領域</span></button>
-<button type="button" class="curiosity-node" style="--x:18%;--y:82%" data-curiosity="4" aria-pressed="false"><span class="curiosity-dot"></span><span>科技</span></button>
-<button type="button" class="curiosity-node" style="--x:50%;--y:88%" data-curiosity="5" aria-pressed="false"><span class="curiosity-dot"></span><span>文明</span></button>
-<button type="button" class="curiosity-node" style="--x:82%;--y:82%" data-curiosity="6" aria-pressed="false"><span class="curiosity-dot"></span><span>未來趨勢</span></button>
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" class="curiosity-lines"><g fill="none" stroke="#88a6b5" stroke-width=".22" stroke-dasharray="1 1.5" opacity=".6"><path d="M18 18L50 15L82 18L82 82L50 85L18 82Z"/><path d="M18 18L50 50L50 15M82 18L50 50L82 82M18 82L50 50L50 85"/><ellipse cx="50" cy="50" rx="40" ry="36"/></g><g fill="#c6d5df" opacity=".65"><circle cx="10" cy="40" r=".4"/><circle cx="35" cy="31" r=".3"/><circle cx="72" cy="42" r=".6"/><circle cx="91" cy="54" r=".4"/><circle cx="38" cy="70" r=".3"/><circle cx="63" cy="68" r=".45"/><circle cx="8" cy="65" r=".35"/><circle cx="95" cy="9" r=".4"/><circle cx="27" cy="94" r=".4"/></g></svg>
+<button type="button" class="curiosity-node" style="--x:18%;--y:18%" data-curiosity="0" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.2 2 3 6 3 10c0 5 5.2 12 9 12s9-7 9-12c0-4-3.2-8-9-8Z"/><path d="M6.5 10.5c2.5-.5 4 1 4 3.5-2.5.1-4-1.1-4-3.5Zm11 0c-2.5-.5-4 1-4 3.5 2.5.1 4-1.1 4-3.5Z"/><path d="M11 18h2"/></svg></span><span>外星人</span></button>
+<button type="button" class="curiosity-node" style="--x:50%;--y:15%" data-curiosity="1" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m16 16 5 5M8 8a2.7 2.7 0 0 1 5 1.1c0 1.8-2.3 2.1-2.5 3.4"/><path d="M10.5 14.9h.01"/></svg></span><span>獵奇</span></button>
+<button type="button" class="curiosity-node" style="--x:82%;--y:18%" data-curiosity="2" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5M12 12v10M7.5 4.5l9 5"/></svg></span><span>模型</span></button>
+<button type="button" class="curiosity-node core" style="--x:50%;--y:50%" data-curiosity="3" aria-pressed="true"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.7 5.3L8 16l2.7-5.3L16 8Z"/><path d="M12 1v2M12 21v2M1 12h2M21 12h2"/></svg></span><span>未知領域</span></button>
+<button type="button" class="curiosity-node" style="--x:18%;--y:82%" data-curiosity="4" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx=".6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><span>科技</span></button>
+<button type="button" class="curiosity-node" style="--x:50%;--y:85%" data-curiosity="5" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 12 3l9 5H3Zm1 13h16M3 18h18M6 9v9M10 9v9M14 9v9M18 9v9"/><circle cx="12" cy="6" r=".6"/></svg></span><span>文明</span></button>
+<button type="button" class="curiosity-node" style="--x:82%;--y:82%" data-curiosity="6" aria-pressed="false"><span class="curiosity-symbol" aria-hidden="true"><span class="curiosity-dot"></span><svg class="curiosity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V4M3 20h18M6 15l5-5 4 3 6-8M16 5h5v5"/><path d="M7 18v2M12 15v5M17 12v8" opacity=".55"/></svg></span><span>未來趨勢</span></button>
 </div>
 <div class="curiosity-detail" aria-live="polite" aria-atomic="true"><span id="curiosity-kicker" class="small-label">THE UNKNOWN</span><h3 id="curiosity-title">未知領域</h3><p id="curiosity-copy">對還沒有答案的問題保持好奇。從陌生知識開始，逐步理解原理、證據與仍待解答的部分。</p></div>
 </div>
