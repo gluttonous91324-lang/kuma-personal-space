@@ -133,12 +133,12 @@
     if(!cards.length||!imgOne||!imgTwo||!gallery)return;
     const previews={
       overview:[
-        {src:'assets/portrait-bag.webp',alt:'彥克身穿外套、背著斜背帶的生活照片',caption:'我的日常'},
-        {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'包款與細節'}
+        {src:'assets/wardrobe-editorial.svg',alt:'日系男裝外套與襯衫收藏概念插畫',caption:'男裝收藏（示意）'},
+        {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'皮革包款'}
       ],
       japan:[
         {src:'assets/japan-select.webp',alt:'日本 IKEDA SELECT 選物店招牌照片',caption:'日本選物'},
-        {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'包款與材質'}
+        {src:'assets/textile-editorial.svg',alt:'男裝布料紋理及低彩度配色概念插畫',caption:'材質與配色（示意）'}
       ],
       reading:[
         {src:'assets/lifestyle-reading.svg',alt:'閱讀書本的概念插畫，尚無實際照片',caption:'閱讀（插畫）'},
