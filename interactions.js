@@ -20,22 +20,49 @@
     }
   };
   const aiProjects = {
-    credit: {
-      kicker: '01 / BUSINESS × AI',
-      title: '債權主檔',
-      text: '將分散的債權資訊、額度條件與出貨前檢核整合在同一個管理架構。對我而言，AI 的價值之一，是讓繁雜的工作更容易被確認與追蹤。'
-    },
-    builders: {
-      kicker: '02 / RISK × OBSERVATION',
-      title: '建商變化預警模型',
-      text: '從建商動態、公開事件與風險訊號出發，研究如何持續觀察並提早發現值得注意的變化。它是一個持續調整的個人分析專案。'
-    },
-    kuma: {
-      kicker: '03 / CREATIVITY × INTERACTION',
-      title: 'Kuma OS 桌面女友',
-      text: '純粹從興趣出發的桌面互動作品。喜歡研究介面、操作方式與體驗，讓腦中覺得有趣的想法成為可以實際使用的東西。'
-    }
-  };
+  "credit": {
+    "kicker": "01 / BUSINESS × AI",
+    "title": "債權主檔",
+    "text": "將分散的債權資訊、額度條件與出貨前檢核整合成管理工具，讓日常判斷更有依據。",
+    "features": "整合債權餘額、信用額度及出貨檢核，提供額度試算與管理總覽。",
+    "purpose": "降低人工比對與重複計算，讓額度判斷有一致的基準及追蹤方式。",
+    "practice": "出貨前確認可用額度，評估超額情況及追加額度需求，作為內部確認與決策的輔助。",
+    "flow": [
+      "資料整合",
+      "條件檢核",
+      "額度試算",
+      "決策輔助"
+    ]
+  },
+  "builders": {
+    "kicker": "02 / RISK × OBSERVATION",
+    "title": "建商變化預警模型",
+    "text": "從公開資訊與風險訊號出發，建立持續觀察建商變化的個人分析專案。",
+    "features": "彙整公開事件、追蹤建商動態及異常訊號，建立風險觀察與歷史紀錄。",
+    "purpose": "減少重要資訊的漏報，將零散事件轉為可持續更新、比較的觀察資料。",
+    "practice": "觀察合作對象及產業動態，當異常訊號出現時，作為進一步查證與風險評估的起點，而非信用判定。",
+    "flow": [
+      "公開資訊",
+      "訊號追蹤",
+      "交叉查證",
+      "風險觀察"
+    ]
+  },
+  "kuma": {
+    "kicker": "03 / CREATIVITY × INTERACTION",
+    "title": "Kuma OS 桌面女友",
+    "text": "從個人興趣出發，探索桌面介面、角色互動與使用體驗，將創意轉化為可操作的作品。",
+    "features": "以桌面角色與互動介面為核心，研究畫面呈現、操作流程及互動回饋的設計。",
+    "purpose": "探索 AI 如何協助個人將想法轉為原型，並透過反覆調整改善使用體驗。",
+    "practice": "作為個人介面設計與互動開發的實驗場，測試構想、觀察操作體驗，再逐步修正設計。",
+    "flow": [
+      "創意構想",
+      "介面設計",
+      "互動原型",
+      "體驗改善"
+    ]
+  }
+};
   const works = [
     {src:'assets/design.svg',title:'Coffee Grinder｜包裝設計',desc:'從平面視覺到盒型設計，曾實際製作成盒子供朋友使用。本站目前先以示意圖展示。'},
     {src:'assets/space.svg',title:'SUS 架｜空間與結構',desc:'研究尺寸、結構、動線與收納邏輯，再親自組裝並逐步優化。本站目前先以示意圖展示。'},
@@ -64,31 +91,15 @@
     }));
   }
   function setupAI() {
-    const buttons = [...document.querySelectorAll('[data-ai]')];
-    const box = document.getElementById('ai-detail');
-    if (!buttons.length || !box) return;
-    const kicker = document.getElementById('ai-kicker');
-    const title = document.getElementById('ai-title');
-    const text = document.getElementById('ai-text');
-    buttons.forEach((btn,index) => {
-      btn.addEventListener('click', () => {
-        const project = aiProjects[btn.dataset.ai];
-        if (!project) return;
-        buttons.forEach(b => {b.setAttribute('aria-selected',String(b===btn)); b.tabIndex = b===btn?0:-1});
-        kicker.textContent = project.kicker;
-        title.textContent = project.title;
-        text.textContent = project.text;
-        animateContent(box);
-      });
-      btn.addEventListener('keydown',e => {
-        if (!['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) return;
-        e.preventDefault();
-        const next = e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowLeft'?-1:1)+buttons.length)%buttons.length;
-        buttons[next].focus();
-        buttons[next].click();
-      });
-    });
+    (function setupAI(doc,projects,animate){
+ const buttons=[...doc.querySelectorAll('[data-ai]')],box=doc.getElementById('ai-detail');if(!buttons.length||!box)return;
+ const fields={kicker:doc.getElementById('ai-kicker'),title:doc.getElementById('ai-title'),text:doc.getElementById('ai-text'),features:doc.getElementById('ai-features'),purpose:doc.getElementById('ai-purpose'),practice:doc.getElementById('ai-practice')};
+ const flow=[...box.querySelectorAll('[data-ai-flow]')];
+ function select(btn,withAnimation){const p=projects[btn.dataset.ai];if(!p)return;buttons.forEach(b=>{b.setAttribute('aria-selected',String(b===btn));b.tabIndex=b===btn?0:-1});Object.keys(fields).forEach(k=>{if(fields[k])fields[k].textContent=p[k]});flow.forEach((e,i)=>{e.textContent=p.flow[i]||''});if(withAnimation)animate(box)}
+ buttons.forEach((btn,index)=>{btn.addEventListener('click',()=>select(btn,true));btn.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowLeft'?-1:1)+buttons.length)%buttons.length;buttons[next].focus();buttons[next].click()})});select(buttons.find(b=>b.getAttribute('aria-selected')==='true')||buttons[0],false);
+})(document,aiProjects,animateContent);
   }
+
   function setupGallery() {
     const buttons = [...document.querySelectorAll('[data-gallery-index]')];
     const dialog = document.getElementById('work-gallery-modal');
