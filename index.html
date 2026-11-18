@@ -55,6 +55,23 @@
 @media(max-width:440px){.links .tile .name{font-size:10px}.links .tile .symbol{font-size:18px}}
 #travel .travel-log{margin-bottom:12px}
 </style>
+<style id="curiosity-styles">
+@media(min-width:901px){.aside .links{grid-template-columns:repeat(3,minmax(0,1fr))}.aside .links .tile,.aside .links .tile:nth-child(n+4){grid-column:auto;min-width:0}}
+@media(max-width:900px){.aside .links{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.aside .links .tile{min-height:72px;padding:8px 4px}.aside .links .tile .symbol{margin:4px 0 3px}}
+.curiosity-map{height:clamp(228px,31vh,300px);background:radial-gradient(ellipse at 50% 50%,#30444f 0,#202b34 45%,#171e26 100%);position:relative;isolation:isolate;overflow:hidden;margin:14px 0 0;border:1px solid #3c4c55}
+.curiosity-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.curiosity-node{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:0;background:transparent;color:#d4e0e7;font-size:clamp(10px,1.5vw,13px);white-space:nowrap;padding:8px 6px;line-height:1.3;z-index:1}
+.curiosity-dot{display:block;width:9px;height:9px;background:#a7c2d0;border-radius:50%;box-shadow:0 0 0 5px #a7c2d018,0 0 12px #a7c2d05e;transition:background .2s,box-shadow .2s}
+.curiosity-node.core .curiosity-dot{width:16px;height:16px}
+.curiosity-node[aria-pressed=true],.curiosity-node:hover{color:#fff}
+.curiosity-node[aria-pressed=true] .curiosity-dot,.curiosity-node:hover .curiosity-dot{background:#f2d1a3;box-shadow:0 0 0 6px #ecc99a24,0 0 18px #ecc99ac0}
+.curiosity-node:focus-visible{outline:1px solid #f2d1a3;outline-offset:2px}
+.curiosity-detail{border:1px solid #d6d9d7;border-left:3px solid #516874;background:#f5f6f5;padding:15px 18px;min-height:119px}
+.curiosity-detail .small-label{font-size:10px;letter-spacing:.18em;color:#63737b}
+.curiosity-detail h3{font-size:21px;font-weight:500;margin:7px 0;color:#252b2d}
+.panel .curiosity-detail p{font-size:13px;line-height:1.8;margin:0;color:#4e5658}
+@media(prefers-reduced-motion:reduce){.curiosity-dot{transition:none}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -96,7 +113,7 @@
 <div class="work-wall">
 <button type="button" class="work-thumb" data-gallery-index="0"><img src="assets/design.svg" alt="Coffee Grinder 包裝概念示意" loading="lazy"><span>包裝設計<small>GRAPHIC DESIGN</small></span></button>
 <button type="button" class="work-thumb" data-gallery-index="1"><img src="assets/space.svg" alt="SUS 架結構示意" loading="lazy"><span>SUS 架規劃<small>SPACE & ORDER</small></span></button>
-<button type="button" class="work-thumb" data-gallery-index="2"><img src="assets/bags.svg" alt="男裝包款示意" loading="lazy"><span>生活與選物<small>LIFESTYLE</small></span></button>
+<button type="button" class="work-thumb" data-gallery-index="2"><img src="assets/surface-renovation.svg" alt="家具貼皮、磁磚貼皮與油漆搭配的概念示意" loading="lazy"><span>家具與空間改造<small>SURFACE / PAINT</small></span></button>
 </div>
 <p class="work-hint">※ 目前為示意圖；待你提供原始照片後改成真正的個人作品展。</p>
 </div>
@@ -130,15 +147,30 @@
 <div class="travel-detail" aria-live="polite" aria-atomic="true"><div id="travel-kicker" class="travel-kicker">TRAVEL NOTES / 旅途隨想</div><h4 id="travel-title">從台北出發</h4><p id="travel-copy">旅行不只是走訪不同地方，也是換個角度看城市、建築與生活。選擇左側的目的地，看看不同地方值得觀察的風景。</p></div></div>
 <p class="travel-note">移動小飛機至目的地，或點選地區名稱。虛線為旅行足跡示意，非實際航班。</p></section>
 </div>
+<div id="curiosity" class="panel">
+<span class="overline">EXPLORATION / IDEAS / UNKNOWN</span><h2>對未知保持好奇</h2>
+<p class="section-intro">除了工作與生活，也喜歡探索陌生的事物與尚未找到答案的問題。</p>
+<div class="curiosity-map" role="group" aria-label="好奇心主題探索">
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" class="curiosity-lines"><g fill="none" stroke="#88a6b5" stroke-width=".22" stroke-dasharray="1 1.5" opacity=".6"><path d="M18 18L50 12L82 18L82 82L50 88L18 82Z"/><path d="M18 18L50 50L50 12M82 18L50 50L82 82M18 82L50 50L50 88"/><ellipse cx="50" cy="50" rx="40" ry="36"/></g><g fill="#c6d5df" opacity=".65"><circle cx="10" cy="40" r=".4"/><circle cx="35" cy="31" r=".3"/><circle cx="72" cy="42" r=".6"/><circle cx="91" cy="54" r=".4"/><circle cx="38" cy="70" r=".3"/><circle cx="63" cy="68" r=".45"/><circle cx="8" cy="65" r=".35"/><circle cx="95" cy="9" r=".4"/><circle cx="27" cy="94" r=".4"/></g></svg>
+<button type="button" class="curiosity-node" style="--x:18%;--y:18%" data-curiosity="0" aria-pressed="false"><span class="curiosity-dot"></span><span>外星人</span></button>
+<button type="button" class="curiosity-node" style="--x:50%;--y:12%" data-curiosity="1" aria-pressed="false"><span class="curiosity-dot"></span><span>獵奇</span></button>
+<button type="button" class="curiosity-node" style="--x:82%;--y:18%" data-curiosity="2" aria-pressed="false"><span class="curiosity-dot"></span><span>模型</span></button>
+<button type="button" class="curiosity-node core" style="--x:50%;--y:50%" data-curiosity="3" aria-pressed="true"><span class="curiosity-dot"></span><span>未知領域</span></button>
+<button type="button" class="curiosity-node" style="--x:18%;--y:82%" data-curiosity="4" aria-pressed="false"><span class="curiosity-dot"></span><span>科技</span></button>
+<button type="button" class="curiosity-node" style="--x:50%;--y:88%" data-curiosity="5" aria-pressed="false"><span class="curiosity-dot"></span><span>文明</span></button>
+<button type="button" class="curiosity-node" style="--x:82%;--y:82%" data-curiosity="6" aria-pressed="false"><span class="curiosity-dot"></span><span>未來趨勢</span></button>
+</div>
+<div class="curiosity-detail" aria-live="polite" aria-atomic="true"><span id="curiosity-kicker" class="small-label">THE UNKNOWN</span><h3 id="curiosity-title">未知領域</h3><p id="curiosity-copy">對還沒有答案的問題保持好奇。從陌生知識開始，逐步理解原理、證據與仍待解答的部分。</p></div>
+</div>
 <p class="tiny" style="margin:14px 0 0;color:#85918a">※ 部分生活圖片與作品仍為示意插畫，將逐步替換成個人實際照片。</p></div></section>
 <aside class="aside"><div class="hero"><span class="eyebrow">A little more than a résumé</span><h1>HELLO,<br><span class="name-line">I'M <i>Yen Ke*彥克</i></span></h1><p class="statement">喜歡美感與秩序，<br>也喜歡把有趣的想法變成真正的作品。</p><p class="tiny">旅行、閱讀、穿搭、空間設計、AI。工作以外，也總有值得投入的事。</p></div>
-<div class="profile"><div class="portrait" title="彥克的原創人物線描作品"><img class="personal-mark" src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div><div class="profile-text"><span class="overline">PROFILE / TAIPEI</span><h2>Yen Ke*彥克</h2><p>學習・探索・實作<br>Panasonic · Sales & Systems</p></div></div><nav class="links" aria-label="探索個人介紹主題"><button class="tile" data-target="about" aria-pressed="true"><span class="number">01</span><span class="symbol">⌘</span><span class="name">經歷</span></button><button class="tile" data-target="lifestyle" aria-pressed="false"><span class="number">02</span><span class="symbol">✳</span><span class="name">生活</span></button><button class="tile" data-target="works" aria-pressed="false"><span class="number">03</span><span class="symbol">▧</span><span class="name">作品</span></button><button class="tile" data-target="ai" aria-pressed="false"><span class="number">04</span><span class="symbol">⌁</span><span class="name">AI LAB</span></button><button type="button" class="tile travel-tile" data-target="travel" aria-pressed="false"><span class="number">05</span><span class="symbol" aria-hidden="true">✈</span><span class="name">旅行</span></button></nav><p class="tiny">SELECT A WINDOW TO EXPLORE ↗</p></aside>
+<div class="profile"><div class="portrait" title="彥克的原創人物線描作品"><img class="personal-mark" src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div><div class="profile-text"><span class="overline">PROFILE / TAIPEI</span><h2>Yen Ke*彥克</h2><p>學習・探索・實作<br>Panasonic · Sales & Systems</p></div></div><nav class="links" aria-label="探索個人介紹主題"><button class="tile" data-target="about" aria-pressed="true"><span class="number">01</span><span class="symbol">⌘</span><span class="name">經歷</span></button><button class="tile" data-target="lifestyle" aria-pressed="false"><span class="number">02</span><span class="symbol">✳</span><span class="name">生活</span></button><button class="tile" data-target="works" aria-pressed="false"><span class="number">03</span><span class="symbol">▧</span><span class="name">作品</span></button><button class="tile" data-target="ai" aria-pressed="false"><span class="number">04</span><span class="symbol">⌁</span><span class="name">AI LAB</span></button><button type="button" class="tile travel-tile" data-target="travel" aria-pressed="false"><span class="number">05</span><span class="symbol" aria-hidden="true">✈</span><span class="name">旅行</span></button><button type="button" class="tile" data-target="curiosity" aria-pressed="false"><span class="number">06</span><span class="symbol" aria-hidden="true">✧</span><span class="name">好奇心</span></button></nav><p class="tiny">SELECT A WINDOW TO EXPLORE ↗</p></aside>
 </div><footer class="foot"><span>PERSONAL SPACE — NOT A CORPORATE PROFILE</span><span>DESIGNED FOR CONVERSATION, NOT A FORMAL RÉSUMÉ.</span></footer>
 
 <dialog class="gallery-dialog" id="work-gallery-modal" aria-labelledby="gallery-view-title"><header><span>PERSONAL WORKS · <span id="gallery-counter">1 / 3</span></span><button type="button" id="gallery-close" aria-label="關閉作品視窗">關閉 ×</button></header><div class="gallery-body"><img id="gallery-view-image" src="assets/design.svg" alt="作品示意圖"><h3 id="gallery-view-title">Coffee Grinder</h3><p id="gallery-view-description">作品說明</p><div class="gallery-actions"><button type="button" id="gallery-prev" aria-label="上一件作品">← 上一件</button><button type="button" id="gallery-next" aria-label="下一件作品">下一件 →</button></div></div></dialog>
 <script>
-(()=>{'use strict';const panels=[...document.querySelectorAll('.panel')],tiles=[...document.querySelectorAll('.tile')];const labels={about:'01 / ABOUT ME',lifestyle:'02 / LIFESTYLE',works:'03 / MY WORKS',ai:'04 / AI LAB',travel:'05 / TRAVEL LOG'};function open(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tiles.forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.target===id)));document.getElementById('window-name').textContent=labels[id];document.querySelector('.content-window').scrollTop=0;if(innerWidth<901)document.querySelector('.content-window').scrollIntoView({behavior:'smooth',block:'start'});}tiles.forEach(t=>t.addEventListener('click',()=>open(t.dataset.target)));})();
-</script><script src="interactions.js?v=photo-20261110" defer></script><script id="travel-script">
+(()=>{'use strict';const panels=[...document.querySelectorAll('.panel')],tiles=[...document.querySelectorAll('.tile')];const labels={about:'01 / ABOUT ME',lifestyle:'02 / LIFESTYLE',works:'03 / MY WORKS',ai:'04 / AI LAB',travel:'05 / TRAVEL LOG',curiosity:'06 / CURIOSITY'};function open(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tiles.forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.target===id)));document.getElementById('window-name').textContent=labels[id];document.querySelector('.content-window').scrollTop=0;if(innerWidth<901)document.querySelector('.content-window').scrollIntoView({behavior:'smooth',block:'start'});}tiles.forEach(t=>t.addEventListener('click',()=>open(t.dataset.target)));})();
+</script><script src="interactions.js?v=works-20261118" defer></script><script id="travel-script">
 (()=>{'use strict';const data=[["美國","USA",-98,39,-12,-12,"美國的魅力在於尺度與多樣性。城市與自然、不同文化與生活方式之間的反差，讓人有機會跳脫習慣的視角。"],["新加坡","SINGAPORE",103.82,1.35,-10,17,"新加坡讓人想到城市規劃與效率。建築、綠化與公共空間如何共存，是很值得觀察的設計課題。"],["日本","JAPAN",138,36,21,-7,"日本是我很喜歡旅行的地方。無論百貨選物、包裝設計或街道空間，日常生活裡的小細節，往往就是最有趣的地方。"],["捷克","CZECHIA",15.5,49.8,-24,-15,"捷克的歷史街區與古典建築，提供了另一種觀看城市的角度。比起快速走訪景點，更值得慢慢感受街道的尺度與時間感。"],["奧地利","AUSTRIA",14.2,47.5,22,15,"奧地利的建築、藝術與城市文化，讓人思考美感如何融入日常，而不只是存在於博物館與藝術作品中。"],["韓國","KOREA",127.8,36,0,-18,"韓國的流行文化與商業設計很有辨識度。不同於日本的美感與品牌表達方式，也是一種有趣的對照。"],["澳門","MACAU",113.54,22.2,-18,15,"澳門的特色在於不同文化在同一座城市交會。中西建築、街道與現代商業空間的並置，有著獨特的反差。"],["東澳","EAST AUSTRALIA",151,-33,7,14,"東澳的海岸、都市與開闊空間，讓人想到另一種生活節奏。城市不一定要與自然分離，也能留出更多喘息的空間。"],["西澳","WESTERN AUSTRALIA",115.86,-31.95,-9,14,"西澳的魅力在於開闊的自然尺度。相較密集的都市生活，廣闊的地景與海岸提供了一種不同的空間想像。"]],origin=[603.1308,115.934],map=document.getElementById('travel-map'),plane=document.getElementById('travel-plane');if(!map||!plane)return;
 const markers=[...map.querySelectorAll('.marker')],routes=[...map.querySelectorAll('.travel-route')],buttons=[...document.querySelectorAll('.travel-choices button')];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');let selected=-1,version=0,last=null,angle=0;
@@ -151,4 +183,5 @@ map.addEventListener('pointerleave',()=>{map.classList.remove('plane-cursor');la
 
 })();
 </script>
+<script id="curiosity-script">(()=>{'use strict';const items=[["外星人","EXTRATERRESTRIAL LIFE","宇宙中是否存在其他生命？從地外生命搜尋、可能的生命條件，到人類對未知文明的想像。"],["獵奇","UNUSUAL PHENOMENA","對罕見、反常或難以解釋的現象感興趣；比起直接相信傳聞，更想了解背後的原因與證據。"],["模型","MODELS & MINIATURES","喜歡透過模型、縮小比例與細節，觀察物件的結構、造型及設計，也享受把想像變成實體的過程。"],["未知領域","THE UNKNOWN","對還沒有答案的問題保持好奇。從陌生知識開始，逐步理解原理、證據與仍待解答的部分。"],["科技","TECHNOLOGY","科技如何改變工作、生活與人類的能力？關注 AI、機器人及新技術帶來的實際可能性。"],["文明","CIVILIZATION","人類如何形成社會、文化與制度，又如何在不同時代累積知識與改變生活方式。"],["未來趨勢","FUTURE TRENDS","關注科技、人口、產業與社會的長期變化，思考今天的新發展可能如何影響未來。"]],nodes=[...document.querySelectorAll('[data-curiosity]')];function choose(i){if(!items[i])return;nodes.forEach((n,j)=>n.setAttribute('aria-pressed',String(i===j)));document.getElementById('curiosity-kicker').textContent=items[i][1];document.getElementById('curiosity-title').textContent=items[i][0];document.getElementById('curiosity-copy').textContent=items[i][2];}nodes.forEach((n,i)=>{n.addEventListener('click',()=>choose(i));n.addEventListener('focus',()=>choose(i));n.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')choose(i)});});})();</script>
 </body></html>
