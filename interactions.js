@@ -39,7 +39,7 @@
   const works = [
     {src:'assets/design.svg',title:'Coffee Grinder｜包裝設計',desc:'從平面視覺到盒型設計，曾實際製作成盒子供朋友使用。本站目前先以示意圖展示。'},
     {src:'assets/space.svg',title:'SUS 架｜空間與結構',desc:'研究尺寸、結構、動線與收納邏輯，再親自組裝並逐步優化。本站目前先以示意圖展示。'},
-    {src:'assets/bags.svg',title:'選物與生活美感',desc:'留意男裝、包款與日式包裝的材質、線條、比例與整體氣氛。本站目前先以示意圖展示。'}
+    {src:'assets/surface-renovation.svg',title:'家具與空間改造｜表面更新',desc:'利用家具貼皮、磁磚貼皮與油漆等方式，研究如何保留既有結構、調整材質與色彩，讓空間在不大幅更換家具的情況下產生新的視覺效果。本站目前以概念示意圖展示。'}
   ];
   function animateContent(box) {
     box.classList.remove('is-changing');
