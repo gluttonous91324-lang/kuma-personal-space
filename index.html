@@ -36,10 +36,20 @@
 @media(max-width:500px){.travel-log{padding:10px;margin-top:12px}.travel-counter strong{font-size:21px}.travel-header h3{font-size:19px}.travel-choices button{padding:9px 3px}.travel-map .marker text{font-size:12px}.travel-bottom{grid-template-columns:1fr;gap:12px}.travel-detail{border-left:0;border-top:1px solid #d1d9d5;padding:11px 0 0;min-height:105px}}
 
 @media(min-width:901px){
- .links .travel-tile{grid-column:1/-1;min-height:54px;display:flex;align-items:center;gap:14px;padding:10px 16px}
- .links .travel-tile .symbol{margin:0;font-size:21px}
- .aside{overflow-y:auto;scrollbar-width:thin}
- .aside .links{flex-shrink:0}
+ .shell{height:auto;min-height:max(560px,calc(100vh - 126px))}
+ .main{min-height:0}
+ .content-window{height:max(560px,calc(100vh - 126px))}
+ .aside{overflow:visible}
+ .aside .links{flex-shrink:0;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+ .aside .links .tile{grid-column:span 2;min-width:0;min-height:84px;padding:10px 12px 9px}
+ .aside .links .tile:nth-child(n+4){grid-column:span 3}
+ .aside .links .tile .symbol{font-size:20px;margin:6px 0 4px}
+}
+@media(min-width:901px) and (max-height:770px){
+ .shell{min-height:max(560px,calc(100vh - 103px))}
+ .content-window{height:max(560px,calc(100vh - 103px))}
+ .aside .links .tile{min-height:70px;padding:7px 10px}
+ .aside .links .tile .symbol{font-size:18px;margin:4px 0 3px}
 }
 @media(max-width:900px){.links{grid-template-columns:repeat(5,minmax(0,1fr))}.links .tile{min-width:0;padding-left:3px;padding-right:3px}}
 @media(max-width:440px){.links .tile .name{font-size:10px}.links .tile .symbol{font-size:18px}}
