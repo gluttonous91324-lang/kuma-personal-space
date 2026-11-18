@@ -166,6 +166,27 @@
 @media(max-width:500px){.travel-pref-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.travel-pref,.travel-pref svg{transition:none}.travel-pref:hover svg,.travel-pref[aria-pressed=true] svg{transform:none}}
 </style>
+<style id="travel-pref-motion">
+/* The selected icon alone animates. Unselected icons retain their original poses. */
+#travel.active .travel-pref[aria-pressed="true"] .pref-windows{animation:pref-window-a 2.4s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-window-alt{animation:pref-window-b 2.4s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-bag{transform-origin:12px 5px;animation:pref-bag-swing 1.9s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-walker{animation:pref-walker-bob .8s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-leg-front{transform-origin:10px 14px;animation:pref-stride .8s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-leg-back{transform-origin:10px 14px;animation:pref-stride .8s ease-in-out -.4s infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-arm-front{transform-origin:12px 8px;animation:pref-arm .8s ease-in-out -.4s infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-arm-back{transform-origin:12px 8px;animation:pref-arm .8s ease-in-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-steam-one{animation:pref-steam 2s ease-out infinite}
+#travel.active .travel-pref[aria-pressed="true"] .pref-steam-two{animation:pref-steam 2s ease-out -.85s infinite}
+@keyframes pref-window-a{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes pref-window-b{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes pref-bag-swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@keyframes pref-walker-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-.75px)}}
+@keyframes pref-stride{0%,100%{transform:rotate(-17deg)}50%{transform:rotate(17deg)}}
+@keyframes pref-arm{0%,100%{transform:rotate(13deg)}50%{transform:rotate(-13deg)}}
+@keyframes pref-steam{0%{transform:translateY(1px);opacity:.2}35%{opacity:1}100%{transform:translateY(-2px);opacity:0}}
+@media(prefers-reduced-motion:reduce){#travel.active .travel-pref[aria-pressed="true"] svg *{animation:none!important}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -261,7 +282,7 @@
 <p class="travel-note">移動小飛機或點選地區。虛線為足跡示意，非實際航班。</p></section>
 <section class="travel-preferences" aria-labelledby="travel-pref-heading">
 <div class="travel-pref-heading"><span class="overline">TRAVEL PREFERENCES</span><h3 id="travel-pref-heading">我的旅行方式</h3></div>
-<div class="travel-pref-grid" role="group" aria-label="旅行方式"><button type="button" class="travel-pref" data-travel-pref="0" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V5h9v16M14 21V10h5v11M8 8h3M8 12h3M8 16h3M16 13h1M16 17h1"/></svg><span>城市建築</span><small>ARCHITECTURE</small></button><button type="button" class="travel-pref" data-travel-pref="1" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="14" rx="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span>百貨選物</span><small>SHOPPING</small></button><button type="button" class="travel-pref" data-travel-pref="2" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21l4-7-2-4m2 4 4 2 3 5M8 10l4-2 4 3 4 1m-8-4 1 6"/><circle cx="13" cy="4" r="2"/></svg><span>街道探索</span><small>CITY WALK</small></button><button type="button" class="travel-pref" data-travel-pref="3" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Zm13 1h2a3 3 0 0 1 0 6h-2M3 21h17M8 3v2m5-2v2"/></svg><span>悠閒步調</span><small>SLOW TRAVEL</small></button></div>
+<div class="travel-pref-grid" role="group" aria-label="旅行方式"><button type="button" class="travel-pref" data-travel-pref="0" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V5h9v16M14 21V10h5v11"/><g class="pref-windows"><path d="M8 8h3M8 16h3M16 13h1"/><path class="pref-window-alt" d="M8 12h3M16 17h1"/></g></svg><span>城市建築</span><small>ARCHITECTURE</small></button><button type="button" class="travel-pref" data-travel-pref="1" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="pref-bag"><rect x="4" y="7" width="16" height="14" rx="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><path d="M7 12h10" stroke-width=".85" opacity=".5"/></g></svg><span>百貨選物</span><small>SHOPPING</small></button><button type="button" class="travel-pref" data-travel-pref="2" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22h18" opacity=".6"/><g class="pref-walker"><circle cx="13" cy="4" r="2"/><path d="m12 7-2 7"/><path class="pref-leg-front" d="m10 14 4 2 3 5"/><path class="pref-leg-back" d="m10 14-4 7"/><path class="pref-arm-front" d="m12 8 4 3 4 1"/><path class="pref-arm-back" d="m12 8-4 2-2 3"/></g></svg><span>街道探索</span><small>CITY WALK</small></button><button type="button" class="travel-pref" data-travel-pref="3" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Zm13 1h2a3 3 0 0 1 0 6h-2M3 21h17"/><path class="pref-steam-one" d="M8 7q-2-2 0-4"/><path class="pref-steam-two" d="M13 7q-2-2 0-4"/></svg><span>悠閒步調</span><small>SLOW TRAVEL</small></button></div>
 <p id="travel-pref-copy" aria-live="polite" aria-atomic="true">比起走遍所有景點，更喜歡按照自己的步調，觀察不同城市的日常。</p>
 </section>
 </div>
