@@ -185,6 +185,24 @@
 @keyframes pref-steam{0%{transform:translateY(1px);opacity:.2}35%{opacity:1}100%{transform:translateY(-2px);opacity:0}}
 @media(prefers-reduced-motion:reduce){#travel.active .travel-pref[aria-pressed="true"] svg *{animation:none!important}}
 </style>
+<style id="ai-expanded-styles">
+#ai .ai-tabs{margin-top:12px}
+#ai .ai-detail{padding:14px 17px;min-height:0}
+#ai .ai-detail h3{margin:5px 0 6px;font-size:21px}
+#ai .ai-detail p{font-size:12px;line-height:1.65}
+.ai-project-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:13px 0 8px}
+.ai-project-flow span{position:relative;text-align:center;background:#e9ede9;border:1px solid #d6ddd7;color:#506158;font-size:11px;line-height:1.4;padding:7px 2px;min-width:0}
+.ai-project-flow span:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-size:17px;color:#87948b}
+.ai-project-info{display:grid}
+.ai-info-row{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:start;gap:10px;border-top:1px solid #d8ded9;padding:9px 0}
+.ai-info-row:last-child{padding-bottom:1px}
+.ai-info-label{display:flex;flex-direction:column;gap:4px}
+.ai-info-label span{font-size:8px;letter-spacing:.06em;color:#748079;white-space:nowrap}
+.ai-info-label strong{font-size:12px;font-weight:600;color:#36443b}
+#ai .ai-info-row p{margin:0}
+@media(min-width:901px) and (max-height:770px){#ai{padding-top:17px;padding-bottom:10px}#ai h2{margin-bottom:8px}#ai .section-intro{margin-bottom:8px}#ai .ai-tabs{margin-top:8px}#ai .ai-detail{padding:11px 14px}#ai .ai-project-flow{margin:9px 0 6px}#ai .ai-info-row{padding:6px 0}#ai .ai-detail p{line-height:1.55}}
+@media(max-width:480px){.ai-info-row{grid-template-columns:86px minmax(0,1fr);gap:7px}.ai-info-label span{font-size:7px}.ai-project-flow span{font-size:10px}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -254,7 +272,7 @@
 <div id="ai" class="panel">
 <span class="overline">TOOLS / EXPERIMENTS / SYSTEMS</span><h2>AI LAB</h2>
 <p class="section-intro">AI 對我而言不只是聊天或產生圖片，而是把原本覺得有趣、想改善的事情，試著做成可以操作的工具。</p>
-<p class="interactive-note">選擇一個專案，看看我為什麼想做它</p>
+<p class="interactive-note">選擇專案，探索功能、設計目的與實務應用</p>
 <div class="ai-tabs" role="tablist" aria-label="AI 個人專案">
 <button type="button" class="ai-tab" role="tab" data-ai="credit" aria-selected="true" tabindex="0" aria-controls="ai-detail">債權主檔</button>
 <button type="button" class="ai-tab" role="tab" data-ai="builders" aria-selected="false" tabindex="-1" aria-controls="ai-detail">建商預警</button>
@@ -263,9 +281,14 @@
 <div id="ai-detail" class="ai-detail" role="tabpanel" aria-live="polite" aria-atomic="true">
 <div class="small-label" id="ai-kicker">01 / BUSINESS × AI</div>
 <h3 id="ai-title">債權主檔</h3>
-<p id="ai-text">將分散的債權資訊、額度條件與出貨前檢核整合在同一個管理架構。對我而言，AI 的價值之一，是讓繁雜的工作更容易被確認與追蹤。</p>
-</div>
-<p class="tiny" style="margin-top:18px">※ 僅介紹個人專案概念，不公開公司內部資料。</p>
+<p id="ai-text">將分散的債權資訊、額度條件與出貨前檢核整合成管理工具，讓日常判斷更有依據。</p>
+<div class="ai-project-flow" aria-label="專案流程"><span data-ai-flow="0">資料整合</span><span data-ai-flow="1">條件檢核</span><span data-ai-flow="2">額度試算</span><span data-ai-flow="3">決策輔助</span></div>
+<div class="ai-project-info">
+<div class="ai-info-row"><div class="ai-info-label"><span>01 / FUNCTION</span><strong>核心功能</strong></div><p id="ai-features">整合債權餘額、信用額度及出貨檢核，提供額度試算與管理總覽。</p></div>
+<div class="ai-info-row"><div class="ai-info-label"><span>02 / PURPOSE</span><strong>設計目的</strong></div><p id="ai-purpose">降低人工比對與重複計算，讓額度判斷有一致的基準及追蹤方式。</p></div>
+<div class="ai-info-row"><div class="ai-info-label"><span>03 / APPLICATION</span><strong>實務應用</strong></div><p id="ai-practice">出貨前確認可用額度，評估超額情況及追加額度需求，作為內部確認與決策的輔助。</p></div>
+</div></div>
+<p class="tiny" style="margin-top:10px">※ 僅介紹個人專案概念，不公開公司內部資料。</p>
 </div>
 <div id="travel" class="panel">
 <div class="travel-header"><div><span class="overline">TRAVEL LOG / WORLD ATLAS</span><h2 id="travel-heading">我的世界足跡</h2></div><div class="travel-counter"><strong>09</strong>DESTINATIONS</div></div>
@@ -307,7 +330,7 @@
 <dialog class="gallery-dialog" id="work-gallery-modal" aria-labelledby="gallery-view-title"><header><span>PERSONAL WORKS · <span id="gallery-counter">1 / 3</span></span><button type="button" id="gallery-close" aria-label="關閉作品視窗">關閉 ×</button></header><div class="gallery-body"><img id="gallery-view-image" src="assets/design.svg" alt="作品示意圖"><h3 id="gallery-view-title">Coffee Grinder</h3><p id="gallery-view-description">作品說明</p><div class="gallery-actions"><button type="button" id="gallery-prev" aria-label="上一件作品">← 上一件</button><button type="button" id="gallery-next" aria-label="下一件作品">下一件 →</button></div></div></dialog>
 <script>
 (()=>{'use strict';const panels=[...document.querySelectorAll('.panel')],tiles=[...document.querySelectorAll('.tile')];const labels={about:'01 / ABOUT ME',lifestyle:'02 / LIFESTYLE',works:'03 / MY WORKS',ai:'04 / AI LAB',travel:'05 / TRAVEL LOG',curiosity:'06 / CURIOSITY'};function open(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tiles.forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.target===id)));document.getElementById('window-name').textContent=labels[id];document.querySelector('.content-window').scrollTop=0;if(innerWidth<901)document.querySelector('.content-window').scrollIntoView({behavior:'smooth',block:'start'});}tiles.forEach(t=>t.addEventListener('click',()=>open(t.dataset.target)));})();
-</script><script src="interactions.js?v=lifestyle-compact-20261118" defer></script><script id="travel-script">
+</script><script src="interactions.js?v=ai-lab-expanded-20261118" defer></script><script id="travel-script">
 (()=>{'use strict';const data=[["美國","USA",-98,39,-12,-12,"美國的魅力在於尺度與多樣性。城市與自然、不同文化與生活方式之間的反差，讓人有機會跳脫習慣的視角。"],["新加坡","SINGAPORE",103.82,1.35,-10,17,"新加坡讓人想到城市規劃與效率。建築、綠化與公共空間如何共存，是很值得觀察的設計課題。"],["日本","JAPAN",138,36,21,-7,"日本是我很喜歡旅行的地方。無論百貨選物、包裝設計或街道空間，日常生活裡的小細節，往往就是最有趣的地方。"],["捷克","CZECHIA",15.5,49.8,-24,-15,"捷克的歷史街區與古典建築，提供了另一種觀看城市的角度。比起快速走訪景點，更值得慢慢感受街道的尺度與時間感。"],["奧地利","AUSTRIA",14.2,47.5,22,15,"奧地利的建築、藝術與城市文化，讓人思考美感如何融入日常，而不只是存在於博物館與藝術作品中。"],["韓國","KOREA",127.8,36,0,-18,"韓國的流行文化與商業設計很有辨識度。不同於日本的美感與品牌表達方式，也是一種有趣的對照。"],["澳門","MACAU",113.54,22.2,-18,15,"澳門的特色在於不同文化在同一座城市交會。中西建築、街道與現代商業空間的並置，有著獨特的反差。"],["東澳","EAST AUSTRALIA",151,-33,7,14,"東澳的海岸、都市與開闊空間，讓人想到另一種生活節奏。城市不一定要與自然分離，也能留出更多喘息的空間。"],["西澳","WESTERN AUSTRALIA",115.86,-31.95,-9,14,"西澳的魅力在於開闊的自然尺度。相較密集的都市生活，廣闊的地景與海岸提供了一種不同的空間想像。"]],origin=[603.1308,115.934],map=document.getElementById('travel-map'),plane=document.getElementById('travel-plane');if(!map||!plane)return;
 const markers=[...map.querySelectorAll('.marker')],routes=[...map.querySelectorAll('.travel-route')],buttons=[...document.querySelectorAll('.travel-choices button')];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');let selected=-1,version=0,last=null,angle=0;
