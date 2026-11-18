@@ -128,6 +128,26 @@
 @media(max-width:900px){#travel .travel-map{height:auto}}
 @media(max-width:500px){#travel .travel-bottom{grid-template-columns:1fr;gap:10px}#travel .travel-detail{border-left:0;padding-left:0;padding-top:9px}#travel .travel-header h2{font-size:25px}#travel .travel-map{height:auto}#travel .travel-choices button{padding:8px 3px}}
 </style>
+<style id="select-room-styles">
+#select-room[hidden]{display:none!important}
+.select-room{margin:10px 0 15px;min-width:0;border:1px solid #d8dbd6;padding:12px;background:var(--select-tint,#eeeee8);transition:background-color .25s}
+.select-heading h3{font-size:20px;font-weight:500;letter-spacing:-.03em;margin:3px 0 12px}
+.select-objects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.select-object{min-width:0;border:1px solid #d4d8d2;background:#f9faf8;color:#465049;display:flex;flex-direction:column;align-items:stretch;padding:4px;gap:5px;text-align:center;transition:transform .2s,border-color .2s,box-shadow .2s}
+.select-visual{aspect-ratio:8/5;display:block;background:var(--item-tint);overflow:hidden}
+.select-visual svg{display:block;width:100%;height:100%;filter:saturate(.48);transition:filter .2s,transform .2s}
+.select-object:hover,.select-object[aria-pressed=true]{transform:translateY(-3px);border-color:var(--item-accent);box-shadow:0 3px 7px #00000010}
+.select-object:hover svg,.select-object[aria-pressed=true] svg,.select-object:focus-visible svg{filter:saturate(1);transform:scale(1.035)}
+.select-object[aria-pressed=true] .select-name{font-weight:650;color:var(--item-accent)}
+.select-object:focus-visible{outline:2px solid var(--item-accent);outline-offset:2px}
+.select-name{font-size:12px;padding:1px 0 3px}
+.select-detail{margin-top:10px;border-top:1px solid #00000014;border-left:3px solid var(--select-accent);padding:9px 12px 8px;background:#ffffffaa;min-height:98px}
+.select-detail #select-kicker{font-size:10px;letter-spacing:.1em;color:var(--select-accent)}
+.select-detail h4{font-size:18px;font-weight:500;margin:3px 0 5px;color:#29322c}
+.panel .select-detail p{margin:0;font-size:12px;line-height:1.7;color:#4d5750}
+@media(max-width:500px){.select-room{padding:10px}.select-objects{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.select-visual{aspect-ratio:2/1}}
+@media(prefers-reduced-motion:reduce){.select-room,.select-object,.select-visual svg{transition:none}.select-object:hover,.select-object[aria-pressed=true],.select-object:hover svg,.select-object[aria-pressed=true] svg{transform:none}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -154,6 +174,16 @@
   <figure class="preview-shot"><img id="interest-photo-one" src="assets/wardrobe-editorial.svg" alt="日系男裝外套與襯衫收藏概念插畫" loading="eager"><figcaption id="interest-caption-one">男裝收藏（示意）</figcaption></figure>
   <figure class="preview-shot"><img id="interest-photo-two" src="assets/bag-detail.webp?v=2" alt="男士皮革包款的實拍照片" loading="eager"><figcaption id="interest-caption-two">皮革包款</figcaption></figure>
 </div>
+<section id="select-room" class="select-room" hidden aria-labelledby="select-heading" style="--select-tint:#eeeee8;--select-accent:#667568">
+<div class="select-heading"><span class="overline">SELECT ROOM / JAPANESE AESTHETICS</span><h3 id="select-heading">個人選物室</h3></div>
+<div class="select-objects" role="group" aria-label="選物主題">
+<button type="button" class="select-object" data-select-index="0" aria-pressed="true" style="--item-tint:#eeeee8;--item-accent:#667568"><span class="select-visual"><svg viewBox="0 0 160 100" role="img" aria-label="男裝概念插畫"><path d="M35 17h90M55 17v8l-20 10h40L55 25M105 17v8L85 35h40l-20-10" fill="none" stroke="#848a81" stroke-width="2"/><path d="m44 30-13 9-12 32 14 5 9-20-2 31h44l-2-31 9 20 14-5-12-32-13-9-18 10Z" fill="#57625d" stroke="#3e4e45" stroke-width="1.3"/><path d="m44 30 18 10 18-10-7 19-11-9-11 9Z" fill="#89958b"/><path d="M62 40v47M47 70h10M67 70h10" stroke="#353e38" fill="none"/><path d="m96 30-11 7-9 25 11 3 6-13-1 31h36l-1-31 6 13 11-3-9-25-11-7-14 8Z" fill="#c3b7a0" stroke="#958873" stroke-width="1.2"/><path d="m96 30 14 8 14-8-5 13-9-5-9 5Z" fill="#d9cdb6"/><path d="M110 38v45" stroke="#958873"/></svg></span><span class="select-name">男裝</span></button>
+<button type="button" class="select-object" data-select-index="1" aria-pressed="false" style="--item-tint:#ece6dc;--item-accent:#81705b"><span class="select-visual"><svg viewBox="0 0 160 100" role="img" aria-label="包款概念插畫"><ellipse cx="80" cy="85" rx="51" ry="6" fill="#9b8b74" opacity=".19"/><path d="M48 36Q48 12 80 12t32 24" fill="none" stroke="#514c42" stroke-width="6"/><rect x="30" y="35" width="100" height="48" rx="6" fill="#554c40" stroke="#302e29" stroke-width="1.5"/><path d="M30 47q50 27 100 0v-8a4 4 0 0 0-4-4H34a4 4 0 0 0-4 4Z" fill="#70614f" stroke="#40392f"/><path d="M37 39v39M123 39v39" stroke="#b8a087" stroke-width=".8" stroke-dasharray="2 2"/><rect x="74" y="53" width="12" height="10" rx="1" fill="#b7a27a"/><path d="M42 78h76" stroke="#98836a" stroke-width="1" stroke-dasharray="2 2"/></svg></span><span class="select-name">包款</span></button>
+<button type="button" class="select-object" data-select-index="2" aria-pressed="false" style="--item-tint:#f2eee4;--item-accent:#8f7454"><span class="select-visual"><svg viewBox="0 0 160 100" role="img" aria-label="包裝概念插畫"><path d="M26 28 49 13h60l-23 15Z" fill="#d9c5a6" stroke="#a39176"/><path d="M86 28l23-15v61L86 90Z" fill="#b49b78" stroke="#a39176"/><rect x="26" y="28" width="60" height="62" fill="#f4eddf" stroke="#a39176"/><circle cx="56" cy="52" r="10" fill="none" stroke="#7b6b51" stroke-width="1.3"/><path d="M47 72h18m-22 5h26" stroke="#92846d" stroke-width="1"/><path d="M112 46l8-5h18l-8 5Z" fill="#d9dfd5"/><rect x="112" y="46" width="18" height="44" fill="#a2ada0" stroke="#7c887a"/><path d="m130 46 8-5v44l-8 5Z" fill="#7c887a"/><path d="M116 63h10m-8 4h6" stroke="#f0f1e8"/></svg></span><span class="select-name">包裝</span></button>
+<button type="button" class="select-object" data-select-index="3" aria-pressed="false" style="--item-tint:#e9ece7;--item-accent:#657c76"><span class="select-visual"><svg viewBox="0 0 160 100" role="img" aria-label="陳列概念插畫"><path d="M20 15h120v72H20Z" fill="#d8d9d0" stroke="#aeb2a8"/><path d="M20 87 6 96h148l-14-9Z" fill="#c5c9be"/><path d="M28 18h104M44 18v4m36-4v4m36-4v4" stroke="#657369" stroke-width="2"/><path d="m44 23-13 22h26Zm36 0L67 45h26Zm36 0-13 22h26Z" fill="#fff7d9" opacity=".7"/><path d="M28 68h104M28 46h104M32 46v41M128 46v41" stroke="#737c71" stroke-width="2"/><rect x="39" y="31" width="16" height="14" fill="#a8a095"/><rect x="68" y="33" width="25" height="12" fill="#65756b"/><rect x="110" y="28" width="10" height="17" fill="#d0bfa5"/><path d="M45 54h22v13H45ZM99 51h20v16H99Z" fill="#a28d72"/><path d="M77 54h12v13H77Z" fill="#edf0e8"/><rect x="58" y="76" width="44" height="13" fill="#7a867b"/><path d="M63 76h34" stroke="#ecede5"/></svg></span><span class="select-name">陳列</span></button>
+</div>
+<div class="select-detail" aria-live="polite" aria-atomic="true"><span id="select-kicker">01 / MENSWEAR</span><h4 id="select-title">男裝</h4><p id="select-copy">喜歡觀察服裝的剪裁、輪廓與低彩度配色。</p></div>
+</section>
 <section id="reading-shelf" class="reading-shelf" hidden aria-labelledby="reading-heading">
 <div class="reading-heading"><span class="overline">READING / THINKING</span><h3 id="reading-heading">閱讀與思考</h3><p>閱讀不只是累積知識，也是持續修正自己理解世界的方式。</p></div>
 <div class="reading-books" role="group" aria-label="選擇書籍">
@@ -167,7 +197,7 @@
 <div class="reading-reflection" aria-live="polite" aria-atomic="true"><span class="reading-kicker" id="reading-author">01 / Yuval Noah Harari</span><h4 id="reading-title">人類大歷史</h4><p id="reading-note">讓我從更宏觀的角度理解人類文明。許多我們習以為常的制度與價值觀，其實都是人類在歷史中逐步建立的共同認知。</p><a id="reading-source" href="https://tw.buy.yahoo.com/gdsale/A1501052-11233360.html" target="_blank" rel="noopener noreferrer">書封來源 ↗</a></div></section>
 <p class="interactive-note">點開感興趣的主題</p>
 <div class="interest-grid">
-<details class="interest" data-interest="japan"><summary><span><span class="label">日本與選物</span><span class="mini">TRAVEL / STYLE</span></span><img class="interest-thumb" src="assets/japan-select.webp" alt="日本選物店實拍" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">特別喜歡逛日本的百貨公司、伊勢丹與 Outlet。看男裝和包款，也欣賞包裝設計、陳列、街景與城市的生活氣氛。</div></details>
+<details class="interest" data-interest="japan"><summary><span><span class="label">日本與選物</span><span class="mini">SELECT ROOM</span></span><img class="interest-thumb" src="assets/japan-select.webp" alt="日本選物店實拍" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">特別喜歡逛日本的百貨公司、伊勢丹與 Outlet。看男裝和包款，也欣賞包裝設計、陳列、街景與城市的生活氣氛。</div></details>
 <details class="interest" data-interest="reading"><summary><span><span class="label">閱讀與思考</span><span class="mini">BOOKS / IDEAS</span></span><img class="interest-thumb" src="assets/lifestyle-reading.svg" alt="閱讀主題示意插畫" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">喜歡《人類大歷史》《人類大命運》《恆毅力》《刻意練習》《原則》《黑天鵝》等書；最近在讀《快思慢想》。</div></details>
 <details class="interest" data-interest="exercise"><summary><span><span class="label">運動習慣</span><span class="mini">ROPE / CORE</span></span><img class="interest-thumb" src="assets/jump-rope.webp" alt="跳繩器材實拍" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">喜歡跳繩與核心訓練，也曾長期追蹤自己的運動成果。重視的是持續與自我調整，而不是單次表現。</div></details>
 <details class="interest" data-interest="home"><summary><span><span class="label">居家空間</span><span class="mini">SPACE / ORDER</span></span><img class="interest-thumb" src="assets/sus-storage.webp" alt="SUS 收納架實拍" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">會自己研究 SUS 架配置、收納、配色與家具貼皮改造。希望空間即使不大，也能有秩序、質感與舒服的氣氛。</div></details>
@@ -255,8 +285,24 @@ const shelf=document.getElementById('reading-shelf'),gallery=document.getElement
 const cards=[...document.querySelectorAll('#lifestyle .interest[data-interest]')],buttons=[...shelf.querySelectorAll('[data-book-index]')];
 function select(i){const b=books[i];if(!b)return;buttons.forEach((el,j)=>el.setAttribute('aria-pressed',String(i===j)));document.getElementById('reading-author').textContent=String(i+1).padStart(2,'0')+' / '+b[1];document.getElementById('reading-title').textContent=b[0];document.getElementById('reading-note').textContent=b[2];document.getElementById('reading-source').href=b[3]}
 buttons.forEach((button,i)=>{button.addEventListener('click',()=>select(i));button.addEventListener('focus',()=>select(i));button.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')select(i)});const img=button.querySelector('img');const fail=()=>{img.hidden=true};img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail()});
-function sync(){const active=reading.open;shelf.hidden=!active;gallery.hidden=active}
+const japan=document.querySelector('.interest[data-interest="japan"]'),room=document.getElementById('select-room');
+function syncInterestPanels(reading,japan,shelf,gallery,room){
+ const active=reading.open,selected=japan.open&&!active;shelf.hidden=!active;room.hidden=!selected;gallery.hidden=active||selected;
+}
+function sync(){if(japan&&room)syncInterestPanels(reading,japan,shelf,gallery,room);else{shelf.hidden=!reading.open;gallery.hidden=reading.open}}
 cards.forEach(c=>c.addEventListener('toggle',sync));sync();select(0)
 })();
 </script>
+<script id="select-room-script">(function setupSelectRoom(doc,items){
+ const room=doc.getElementById('select-room');if(!room)return;
+ const buttons=[...room.querySelectorAll('[data-select-index]')];
+ function choose(i){const p=items[i];if(!p)return;
+  buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
+  room.style.setProperty('--select-tint',p[3]);room.style.setProperty('--select-accent',p[4]);
+  doc.getElementById('select-kicker').textContent=String(i+1).padStart(2,'0')+' / '+p[1];
+  doc.getElementById('select-title').textContent=p[0];doc.getElementById('select-copy').textContent=p[2];
+ }
+ buttons.forEach((button,i)=>{button.addEventListener('click',()=>choose(i));button.addEventListener('focus',()=>choose(i));button.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')choose(i)});});
+ choose(0);
+})(document,[["男裝","MENSWEAR","喜歡觀察服裝的剪裁、輪廓與低彩度配色。","#eeeee8","#667568"],["包款","BAG COLLECTION","比起品牌辨識度，更在意皮革材質、結構、比例與使用機能。","#ece6dc","#81705b"],["包裝","PACKAGE DESIGN","日本商品的包裝、字體、色彩與留白，經常是值得研究的設計細節。","#f2eee4","#8f7454"],["陳列","VISUAL MERCHANDISING","喜歡觀察日本百貨與選物店，如何透過燈光、空間及物件排列營造整體氛圍。","#e9ece7","#657c76"]]);</script>
 </body></html>
