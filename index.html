@@ -294,6 +294,46 @@
 @media(max-width:650px){#about .timeline-step .career-code{position:static;font-size:8px}#about .timeline-track{gap:9px}.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.product-grid[data-product-stage="development"],.product-grid[data-product-stage="systems"]{grid-template-columns:repeat(3,minmax(0,1fr))}.product-icon span{min-height:1.5em}#product-caption{flex-wrap:wrap;gap:3px 8px}}
 @media(prefers-reduced-motion:reduce){.product-icon,.product-icon svg{transition:none}.product-icon:hover svg,.product-icon[aria-pressed=true] svg{transform:none}}
 </style>
+<style id="rpg-menu-styles">
+.aside.rpg-aside{display:flex;flex-direction:column;gap:0;min-width:0;padding:8px 7px 0 0;overflow:visible}
+.rpg-identity{flex:0 0 auto}
+.rpg-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#78877c;font-size:10px;letter-spacing:.14em;line-height:1.4}
+.rpg-id-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 12px}
+.rpg-id-text{min-width:0;flex:1}
+.rpg-id-text h1{font-size:clamp(43px,4.4vw,70px);line-height:.98;letter-spacing:-.065em;color:#222b25;font-weight:600;margin:0}
+.rpg-id-text h1 span{display:block;font:italic 400 clamp(23px,2.6vw,38px)/1.3 Georgia,"Noto Sans TC","Microsoft JhengHei",serif;letter-spacing:-.035em;color:#526559;margin-top:5px;white-space:nowrap}
+.rpg-role{font-size:10px;color:#64776a;letter-spacing:.085em;margin:9px 0 0}
+.rpg-mark{flex:0 0 clamp(73px,8vw,110px);aspect-ratio:1;display:grid;place-items:center;position:relative;border:1px dashed #bccabd;border-radius:50%;padding:8px}
+.rpg-mark::before{content:"";position:absolute;inset:5px;border-radius:50%;background:#e8ede5}
+.rpg-mark img{position:relative;width:100%;height:100%;object-fit:contain;display:block;border-radius:50%}
+.rpg-statement{font-size:clamp(13px,1.3vw,18px);line-height:1.7;color:#526458;letter-spacing:.025em;margin:0}
+.rpg-heading{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #c5cfc5;margin-top:20px;padding:10px 0 5px;color:#748578;font-size:10px;letter-spacing:.15em;font-variant-numeric:tabular-nums}
+.aside.rpg-aside .links.rpg-links{display:flex;flex-direction:column;gap:0;margin:0;order:0;flex:0 0 auto}
+.aside.rpg-aside .rpg-links .rpg-entry{display:grid;grid-template-columns:12px 22px minmax(0,1fr) 30px;align-items:center;gap:8px;text-align:left;min-height:0;min-width:0;width:100%;padding:7px 9px 7px 5px;background:transparent;border:0;border-radius:0;box-shadow:none;color:#6a7d70;transform:none;transition:background .22s,color .22s,transform .22s}
+.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true]{background:linear-gradient(90deg,#e0e9df,rgba(232,238,230,.28) 84%,transparent);color:#324d3c;transform:translateX(5px)}
+.aside.rpg-aside .rpg-links .rpg-entry:hover,.aside.rpg-aside .rpg-links .rpg-entry:focus-visible{background-color:#edf1eb;color:#324d3c}
+.rpg-pointer{font-size:17px;color:#587960;opacity:0;line-height:1}
+.rpg-entry[aria-pressed=true] .rpg-pointer{opacity:1;animation:rpg-pointer 1.4s ease-in-out infinite}
+.rpg-entry:focus-visible .rpg-pointer,.rpg-entry:hover .rpg-pointer{opacity:.65}
+.aside.rpg-aside .rpg-entry .number{font:12px Georgia,serif;color:inherit;opacity:.7}
+.rpg-entry-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.aside.rpg-aside .rpg-entry .name{font-size:clamp(15px,1.4vw,18px);font-weight:500;color:inherit;line-height:1.22;letter-spacing:.04em}
+.rpg-en{font-size:9px;color:#748578;letter-spacing:.12em;line-height:1.2}
+.aside.rpg-aside .rpg-links .rpg-entry .symbol{font-size:25px;line-height:1;color:inherit;display:block;text-align:center;margin:0;opacity:.73;transition:transform .22s}
+.aside.rpg-aside .rpg-entry[aria-pressed=true] .symbol{transform:scale(1.13)}
+.rpg-group-divider{height:1px;background:#d5ded4;margin:4px 8px 4px 26px}
+.rpg-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #c7d2c7;padding-top:10px;margin-top:10px;font-size:9px;letter-spacing:.09em;color:#75877a}
+.rpg-status{display:flex;gap:5px}
+.rpg-status i{display:block;width:15px;height:3px;background:#d3ddd1}
+.rpg-status i.active{background:#57775e}
+.rpg-touch{display:none}
+@keyframes rpg-pointer{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+@media(min-width:901px) and (max-height:770px){.aside.rpg-aside{padding-top:2px}.rpg-id-row{margin:12px 0 7px}.rpg-id-text h1{font-size:clamp(38px,4vw,58px)}.rpg-id-text h1 span{font-size:clamp(22px,2.4vw,33px)}.rpg-role{margin-top:5px}.rpg-mark{flex-basis:78px}.rpg-statement{font-size:14px;line-height:1.55}.rpg-heading{margin-top:13px;padding-top:7px}.aside.rpg-aside .rpg-links .rpg-entry{padding:5px 7px 5px 4px}.rpg-footer{margin-top:7px;padding-top:7px}}
+@media(max-width:900px){.aside.rpg-aside{padding:9px 4px 0}.rpg-id-row{margin:14px 0 10px}.rpg-id-text h1{font-size:clamp(44px,9vw,67px)}.rpg-id-text h1 span{font-size:clamp(26px,5.2vw,36px)}.rpg-mark{flex-basis:clamp(78px,20vw,108px)}.rpg-statement{font-size:15px}.rpg-heading{margin-top:15px}.aside.rpg-aside .rpg-links .rpg-entry{padding:6px 8px 6px 5px;min-height:43px}.rpg-footer{margin-top:8px}.rpg-status i{width:12px}}
+@media(pointer:coarse){.rpg-keys{display:none}.rpg-touch{display:inline}}
+@media(max-width:380px){.rpg-id-text h1 span{font-size:23px}.rpg-role{font-size:9px;letter-spacing:.03em}.rpg-mark{flex-basis:67px}.rpg-status{gap:3px}.rpg-status i{width:10px}}
+@media(prefers-reduced-motion:reduce){.rpg-entry,.rpg-entry .symbol,.rpg-pointer{animation:none!important;transition:none!important}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -458,14 +498,40 @@
 <div class="curiosity-detail" aria-live="polite" aria-atomic="true"><span id="curiosity-kicker" class="small-label">THE UNKNOWN</span><h3 id="curiosity-title">未知領域</h3><p id="curiosity-copy">對還沒有答案的問題保持好奇。從陌生知識開始，逐步理解原理、證據與仍待解答的部分。</p></div>
 </div>
 <p class="tiny" style="margin:14px 0 0;color:#85918a">※ 部分生活圖片與作品仍為示意插畫，將逐步替換成個人實際照片。</p></div></section>
-<aside class="aside"><div class="hero"><span class="eyebrow">A little more than a résumé</span><h1>HELLO,<br><span class="name-line">I'M <i>Yen Ke*彥克</i></span></h1><p class="statement">喜歡美感與秩序，<br>也喜歡把有趣的想法變成真正的作品。</p><p class="tiny">旅行、閱讀、穿搭、空間設計、AI。工作以外，也總有值得投入的事。</p></div>
-<div class="profile"><div class="portrait" title="彥克的原創人物線描作品"><img class="personal-mark" src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div><div class="profile-text"><span class="overline">PROFILE / TAIPEI</span><h2>Yen Ke*彥克</h2><p>學習・探索・實作<br>Panasonic · Sales & Systems</p></div></div><nav class="links" aria-label="探索個人介紹主題"><button class="tile" data-target="about" aria-pressed="true"><span class="number">01</span><span class="symbol">⌘</span><span class="name">經歷</span></button><button class="tile" data-target="lifestyle" aria-pressed="false"><span class="number">02</span><span class="symbol">✳</span><span class="name">生活</span></button><button class="tile" data-target="works" aria-pressed="false"><span class="number">03</span><span class="symbol">▧</span><span class="name">作品</span></button><button class="tile" data-target="ai" aria-pressed="false"><span class="number">04</span><span class="symbol">⌁</span><span class="name">AI LAB</span></button><button type="button" class="tile travel-tile" data-target="travel" aria-pressed="false"><span class="number">05</span><span class="symbol" aria-hidden="true">✈</span><span class="name">旅行</span></button><button type="button" class="tile" data-target="curiosity" aria-pressed="false"><span class="number">06</span><span class="symbol" aria-hidden="true">✧</span><span class="name">好奇心</span></button></nav><p class="tiny">SELECT A WINDOW TO EXPLORE ↗</p></aside>
+<aside class="aside rpg-aside">
+<div class="rpg-identity"><div class="rpg-top"><span>PERSONAL SPACE</span><span>TAIPEI / TW</span></div>
+<div class="rpg-id-row"><div class="rpg-id-text"><h1>HELLO,<span>Yen Ke*彥克</span></h1><p class="rpg-role">Panasonic · Sales &amp; Systems</p></div><div class="rpg-mark" title="彥克的原創人物線描作品"><img src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div></div>
+<p class="rpg-statement">喜歡美感與秩序，<br>也喜歡把有趣的想法變成真正的作品。</p></div>
+<div class="rpg-heading"><span>SELECT A CHAPTER</span><span id="rpg-counter">01 / 06</span></div>
+<nav class="links rpg-links" aria-label="探索個人介紹主題"><button type="button" class="tile rpg-entry" data-target="about" aria-pressed="true"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">01</span><span class="rpg-entry-text"><span class="name">經歷</span><span class="rpg-en">CAREER</span></span><span class="symbol" aria-hidden="true">⌘</span></button>
+<button type="button" class="tile rpg-entry" data-target="ai" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">02</span><span class="rpg-entry-text"><span class="name">AI LAB</span><span class="rpg-en">EXPERIMENTS</span></span><span class="symbol" aria-hidden="true">⌁</span></button>
+<button type="button" class="tile rpg-entry" data-target="works" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">03</span><span class="rpg-entry-text"><span class="name">作品</span><span class="rpg-en">COLLECTION</span></span><span class="symbol" aria-hidden="true">▧</span></button>
+<div class="rpg-group-divider" aria-hidden="true"></div><button type="button" class="tile rpg-entry" data-target="lifestyle" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">04</span><span class="rpg-entry-text"><span class="name">生活</span><span class="rpg-en">LIFESTYLE</span></span><span class="symbol" aria-hidden="true">✳</span></button>
+<button type="button" class="tile rpg-entry travel-tile" data-target="travel" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">05</span><span class="rpg-entry-text"><span class="name">旅行</span><span class="rpg-en">TRAVEL LOG</span></span><span class="symbol" aria-hidden="true">✈</span></button>
+<button type="button" class="tile rpg-entry" data-target="curiosity" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">06</span><span class="rpg-entry-text"><span class="name">好奇心</span><span class="rpg-en">THE UNKNOWN</span></span><span class="symbol" aria-hidden="true">✧</span></button></nav>
+<div class="rpg-footer"><span class="rpg-keys">↑ ↓ SELECT &nbsp; ENTER OPEN</span><span class="rpg-touch">SELECT A CHAPTER TO EXPLORE</span><div class="rpg-status" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</aside>
 </div><footer class="foot"><span>PERSONAL SPACE — NOT A CORPORATE PROFILE</span><span>DESIGNED FOR CONVERSATION, NOT A FORMAL RÉSUMÉ.</span></footer>
 
 <dialog class="gallery-dialog" id="work-gallery-modal" aria-labelledby="gallery-view-title"><header><span>PERSONAL WORKS · <span id="gallery-counter">1 / 3</span></span><button type="button" id="gallery-close" aria-label="關閉作品視窗">關閉 ×</button></header><div class="gallery-body"><img id="gallery-view-image" src="assets/design.svg" alt="作品示意圖"><h3 id="gallery-view-title">Coffee Grinder</h3><p id="gallery-view-description">作品說明</p><div class="gallery-actions"><button type="button" id="gallery-prev" aria-label="上一件作品">← 上一件</button><button type="button" id="gallery-next" aria-label="下一件作品">下一件 →</button></div></div></dialog>
-<script>
-(()=>{'use strict';const panels=[...document.querySelectorAll('.panel')],tiles=[...document.querySelectorAll('.tile')];const labels={about:'01 / ABOUT ME',lifestyle:'02 / LIFESTYLE',works:'03 / MY WORKS',ai:'04 / AI LAB',travel:'05 / TRAVEL LOG',curiosity:'06 / CURIOSITY'};function open(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tiles.forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.target===id)));document.getElementById('window-name').textContent=labels[id];document.querySelector('.content-window').scrollTop=0;if(innerWidth<901)document.querySelector('.content-window').scrollIntoView({behavior:'smooth',block:'start'});}tiles.forEach(t=>t.addEventListener('click',()=>open(t.dataset.target)));})();
-</script><script src="interactions.js?v=ai-lock-contest-20261118" defer></script><script id="travel-script">
+<script id="rpg-menu-script">(function setupChapterMenu(doc, win, labels){
+  const panels=[...doc.querySelectorAll('.panel')], tiles=[...doc.querySelectorAll('.rpg-entry')], ticks=[...doc.querySelectorAll('.rpg-status i')], view=doc.querySelector('.content-window'), title=doc.getElementById('window-name'), counter=doc.getElementById('rpg-counter');
+  if(!view||!title||!counter||!tiles.length)return;
+  function open(id, scroll=true){
+    const i=tiles.findIndex(t=>t.dataset.target===id);if(i<0||!labels[id])return;
+    panels.forEach(p=>p.classList.toggle('active',p.id===id));
+    tiles.forEach((t,j)=>t.setAttribute('aria-pressed',String(j===i)));
+    ticks.forEach((t,j)=>t.classList.toggle('active',j===i));
+    title.textContent=labels[id];counter.textContent=String(i+1).padStart(2,'0')+' / '+String(tiles.length).padStart(2,'0');
+    view.scrollTop=0;
+    if(scroll&&win.innerWidth<901)view.scrollIntoView({behavior:win.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  }
+  tiles.forEach((t,i)=>{t.addEventListener('click',()=>open(t.dataset.target));t.addEventListener('keydown',e=>{
+    if(!['ArrowUp','ArrowDown','Home','End'].includes(e.key))return;
+    e.preventDefault();let n=e.key==='Home'?0:e.key==='End'?tiles.length-1:(i+(e.key==='ArrowUp'?-1:1)+tiles.length)%tiles.length;tiles[n].focus();
+  })});
+  open(tiles.find(t=>t.getAttribute('aria-pressed')==='true')?.dataset.target||tiles[0].dataset.target,false);
+})(document,window,{"about":"01 / ABOUT ME","ai":"02 / AI LAB","works":"03 / MY WORKS","lifestyle":"04 / LIFESTYLE","travel":"05 / TRAVEL LOG","curiosity":"06 / CURIOSITY"});</script><script src="interactions.js?v=ai-lock-contest-20261118" defer></script><script id="travel-script">
 (()=>{'use strict';const data=[["美國","USA",-98,39,-12,-12,"美國的魅力在於尺度與多樣性。城市與自然、不同文化與生活方式之間的反差，讓人有機會跳脫習慣的視角。"],["新加坡","SINGAPORE",103.82,1.35,-10,17,"新加坡讓人想到城市規劃與效率。建築、綠化與公共空間如何共存，是很值得觀察的設計課題。"],["日本","JAPAN",138,36,21,-7,"日本是我很喜歡旅行的地方。無論百貨選物、包裝設計或街道空間，日常生活裡的小細節，往往就是最有趣的地方。"],["捷克","CZECHIA",15.5,49.8,-24,-15,"捷克的歷史街區與古典建築，提供了另一種觀看城市的角度。比起快速走訪景點，更值得慢慢感受街道的尺度與時間感。"],["奧地利","AUSTRIA",14.2,47.5,22,15,"奧地利的建築、藝術與城市文化，讓人思考美感如何融入日常，而不只是存在於博物館與藝術作品中。"],["韓國","KOREA",127.8,36,0,-18,"韓國的流行文化與商業設計很有辨識度。不同於日本的美感與品牌表達方式，也是一種有趣的對照。"],["澳門","MACAU",113.54,22.2,-18,15,"澳門的特色在於不同文化在同一座城市交會。中西建築、街道與現代商業空間的並置，有著獨特的反差。"],["東澳","EAST AUSTRALIA",151,-33,7,14,"東澳的海岸、都市與開闊空間，讓人想到另一種生活節奏。城市不一定要與自然分離，也能留出更多喘息的空間。"],["西澳","WESTERN AUSTRALIA",115.86,-31.95,-9,14,"西澳的魅力在於開闊的自然尺度。相較密集的都市生活，廣闊的地景與海岸提供了一種不同的空間想像。"]],origin=[603.1308,115.934],map=document.getElementById('travel-map'),plane=document.getElementById('travel-plane');if(!map||!plane)return;
 const markers=[...map.querySelectorAll('.marker')],routes=[...map.querySelectorAll('.travel-route')],buttons=[...document.querySelectorAll('.travel-choices button')];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');let selected=-1,version=0,last=null,angle=0;
