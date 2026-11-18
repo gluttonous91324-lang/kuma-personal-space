@@ -84,6 +84,31 @@
 @media(max-width:500px){.curiosity-symbol{width:26px;height:26px}.curiosity-icon{width:24px;height:24px}.curiosity-node.core .curiosity-icon{width:27px;height:27px}}
 @media(prefers-reduced-motion:reduce){.curiosity-icon,.curiosity-symbol .curiosity-dot{transition:none}}
 </style>
+<style id="reading-styles">
+#reading-shelf[hidden],#lifestyle-preview[hidden]{display:none!important}
+.reading-shelf{margin:10px 0 15px;padding:13px 0 0;min-width:0;border-top:1px solid #d9ddda}
+.reading-heading h3{font-size:20px;font-weight:500;letter-spacing:-.03em;margin:3px 0 5px}
+.panel .reading-heading p{font-size:12px;color:#59625d;margin:0 0 12px;line-height:1.7}
+.reading-books{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:start;padding:4px 0 9px;border-bottom:2px solid #d5d8d4}
+.reading-book{min-width:0;border:0;padding:0;background:transparent;color:#4d5550;display:flex;flex-direction:column;gap:6px;align-items:stretch;text-align:center;transition:transform .2s}
+.reading-cover{aspect-ratio:2/3;width:100%;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #dadeda;background:#f3f4f2;box-shadow:2px 3px 5px #00000012}
+.reading-cover img{width:100%;height:100%;min-height:0;object-fit:contain;position:absolute;inset:0;background:#fff;filter:saturate(.48);transition:filter .25s;z-index:1}
+.reading-cover img[hidden]{display:none!important}
+.reading-fallback{inset:0;position:absolute;display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;padding:6px;background:var(--book-color);color:white;font-size:clamp(11px,1.2vw,16px);line-height:1.4}
+.reading-fallback small{font-size:8px;font-weight:400;overflow-wrap:anywhere}
+.reading-book-title{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.reading-book:hover,.reading-book[aria-pressed=true]{transform:translateY(-3px)}
+.reading-book:hover img,.reading-book[aria-pressed=true] img,.reading-book:focus-visible img{filter:saturate(1)}
+.reading-book[aria-pressed=true] .reading-cover{border-color:#52665a;box-shadow:0 0 0 2px #52665a}
+.reading-book[aria-pressed=true] .reading-book-title{color:#202b24;font-weight:650}
+.reading-reflection{background:#f5f6f4;border-left:3px solid #52665a;padding:11px 14px;margin-top:11px;min-height:112px}
+.reading-kicker{font-size:10px;letter-spacing:.09em;color:#65736b}
+.reading-reflection h4{font-size:18px;font-weight:500;margin:5px 0;color:#27312b}
+.panel .reading-reflection p{font-size:12px;line-height:1.75;margin:0 0 4px;color:#4d5750}
+.reading-reflection a{font-size:10px;color:#647269;text-underline-offset:2px}
+@media(max-width:550px){.reading-books{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 9px}.reading-cover{aspect-ratio:3/4}.reading-book-title{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.reading-book,.reading-cover img{transition:none}.reading-book:hover,.reading-book[aria-pressed=true]{transform:none}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -110,6 +135,17 @@
   <figure class="preview-shot"><img id="interest-photo-one" src="assets/portrait-bag.webp?v=2" alt="彥克背斜背帶的生活照片" loading="eager"><figcaption id="interest-caption-one">我的日常</figcaption></figure>
   <figure class="preview-shot"><img id="interest-photo-two" src="assets/bag-detail.webp?v=2" alt="男士皮革包款的實拍照片" loading="eager"><figcaption id="interest-caption-two">包款與細節</figcaption></figure>
 </div>
+<section id="reading-shelf" class="reading-shelf" hidden aria-labelledby="reading-heading">
+<div class="reading-heading"><span class="overline">READING / THINKING</span><h3 id="reading-heading">閱讀與思考</h3><p>閱讀不只是累積知識，也是持續修正自己理解世界的方式。</p></div>
+<div class="reading-books" role="group" aria-label="選擇書籍">
+<button type="button" class="reading-book" data-book-index="0" aria-pressed="true" style="--book-color:#594834"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">人類大歷史<small>Yuval Noah Harari</small></span><img src="https://img.yec.tw/zp/MerchandiseImages/29FAB70581-SP-17830905.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">人類大歷史</span></button>
+<button type="button" class="reading-book" data-book-index="1" aria-pressed="false" style="--book-color:#7b3e3d"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">人類大命運<small>Yuval Noah Harari</small></span><img src="https://d26olvxuieoyaa.cloudfront.net/catalog/product/cache/1/small_image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/9/7/9789865258917.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">人類大命運</span></button>
+<button type="button" class="reading-book" data-book-index="2" aria-pressed="false" style="--book-color:#323738"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">原則<small>Ray Dalio</small></span><img src="https://buybookbook.com/cdn/shop/files/ec1451660_600x600_crop_center.webp?v=1736396086" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">原則</span></button>
+<button type="button" class="reading-book" data-book-index="3" aria-pressed="false" style="--book-color:#387b92"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">黑天鵝效應<small>Nassim Nicholas Taleb</small></span><img src="https://www.locuspublishing.com/webroot/file/books/1000/A010FM051A-1000.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">黑天鵝效應</span></button>
+<button type="button" class="reading-book" data-book-index="4" aria-pressed="false" style="--book-color:#43899b"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">刻意練習<small>Anders Ericsson &amp; Robert Pool</small></span><img src="https://d26olvxuieoyaa.cloudfront.net/catalog/product/cache/1/small_image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/9/7/9789861754604.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">刻意練習</span></button>
+<button type="button" class="reading-book" data-book-index="5" aria-pressed="false" style="--book-color:#48664e"><span class="reading-cover"><span class="reading-fallback" aria-hidden="true">快思慢想<small>Daniel Kahneman</small></span><img src="https://d26olvxuieoyaa.cloudfront.net/catalog/product/cache/1/small_image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/9/7/4713510945049.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="reading-book-title">快思慢想</span></button>
+</div>
+<div class="reading-reflection" aria-live="polite" aria-atomic="true"><span class="reading-kicker" id="reading-author">01 / Yuval Noah Harari</span><h4 id="reading-title">人類大歷史</h4><p id="reading-note">讓我從更宏觀的角度理解人類文明。許多我們習以為常的制度與價值觀，其實都是人類在歷史中逐步建立的共同認知。</p><a id="reading-source" href="https://tw.buy.yahoo.com/gdsale/A1501052-11233360.html" target="_blank" rel="noopener noreferrer">書封來源 ↗</a></div></section>
 <p class="interactive-note">點開感興趣的主題</p>
 <div class="interest-grid">
 <details class="interest" data-interest="japan"><summary><span><span class="label">日本與選物</span><span class="mini">TRAVEL / STYLE</span></span><img class="interest-thumb" src="assets/japan-select.webp" alt="日本選物店實拍" loading="lazy"><span class="plus" aria-hidden="true">＋</span></summary><div class="interest-body">特別喜歡逛日本的百貨公司、伊勢丹與 Outlet。看男裝和包款，也欣賞包裝設計、陳列、街景與城市的生活氣氛。</div></details>
@@ -196,4 +232,14 @@ map.addEventListener('pointerleave',()=>{map.classList.remove('plane-cursor');la
 })();
 </script>
 <script id="curiosity-script">(()=>{'use strict';const items=[["外星人","EXTRATERRESTRIAL LIFE","宇宙中是否存在其他生命？從地外生命搜尋、可能的生命條件，到人類對未知文明的想像。"],["獵奇","UNUSUAL PHENOMENA","對罕見、反常或難以解釋的現象感興趣；比起直接相信傳聞，更想了解背後的原因與證據。"],["模型","MODELS & MINIATURES","喜歡透過模型、縮小比例與細節，觀察物件的結構、造型及設計，也享受把想像變成實體的過程。"],["未知領域","THE UNKNOWN","對還沒有答案的問題保持好奇。從陌生知識開始，逐步理解原理、證據與仍待解答的部分。"],["科技","TECHNOLOGY","科技如何改變工作、生活與人類的能力？關注 AI、機器人及新技術帶來的實際可能性。"],["文明","CIVILIZATION","人類如何形成社會、文化與制度，又如何在不同時代累積知識與改變生活方式。"],["未來趨勢","FUTURE TRENDS","關注科技、人口、產業與社會的長期變化，思考今天的新發展可能如何影響未來。"]],nodes=[...document.querySelectorAll('[data-curiosity]')];function choose(i){if(!items[i])return;nodes.forEach((n,j)=>n.setAttribute('aria-pressed',String(i===j)));document.getElementById('curiosity-kicker').textContent=items[i][1];document.getElementById('curiosity-title').textContent=items[i][0];document.getElementById('curiosity-copy').textContent=items[i][2];}nodes.forEach((n,i)=>{n.addEventListener('click',()=>choose(i));n.addEventListener('focus',()=>choose(i));n.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')choose(i)});});})();</script>
+<script id="reading-script">
+(()=>{'use strict';const books=[["人類大歷史","Yuval Noah Harari","讓我從更宏觀的角度理解人類文明。許多我們習以為常的制度與價值觀，其實都是人類在歷史中逐步建立的共同認知。","https://tw.buy.yahoo.com/gdsale/A1501052-11233360.html"],["人類大命運","Yuval Noah Harari","當科技逐漸突破人類原有的限制，未來真正值得思考的，可能不只是科技能做到什麼，而是人類希望成為什麼。","https://d26olvxuieoyaa.cloudfront.net/catalog/product/cache/1/small_image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/9/7/9789865258917.jpg"],["原則","Ray Dalio","與其每次遇到問題都重新做判斷，不如從經驗中建立一套可以反覆運用、驗證與修正的原則。","https://buybookbook.com/products/product-2843"],["黑天鵝效應","Nassim Nicholas Taleb","世界並不總是按照預期發展。比起執著於精準預測未來，我更在意思考有哪些可能被忽略的風險，以及如何面對不確定性。","https://www.locuspublishing.com/book/detail/559"],["刻意練習","Anders Ericsson & Robert Pool","經驗的累積不一定等於能力的提升。真正的進步來自發現不足、接受回饋，並持續調整自己的方法。","https://www.popularonline.com.my/default/catalog/product/view/id/90921/?did=6142"],["快思慢想","Daniel Kahneman","人往往比自己想像中更容易受到直覺與認知偏誤影響。即使是自己深信不疑的判斷，也值得重新檢視。","https://www.popularonline.com.my/default/catalog/product/view/id/100352/s/4713510945049/category/118/?did=8"]];
+const shelf=document.getElementById('reading-shelf'),gallery=document.getElementById('lifestyle-preview'),reading=document.querySelector('.interest[data-interest="reading"]');if(!shelf||!gallery||!reading)return;
+const cards=[...document.querySelectorAll('#lifestyle .interest[data-interest]')],buttons=[...shelf.querySelectorAll('[data-book-index]')];
+function select(i){const b=books[i];if(!b)return;buttons.forEach((el,j)=>el.setAttribute('aria-pressed',String(i===j)));document.getElementById('reading-author').textContent=String(i+1).padStart(2,'0')+' / '+b[1];document.getElementById('reading-title').textContent=b[0];document.getElementById('reading-note').textContent=b[2];document.getElementById('reading-source').href=b[3]}
+buttons.forEach((button,i)=>{button.addEventListener('click',()=>select(i));button.addEventListener('focus',()=>select(i));button.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')select(i)});const img=button.querySelector('img');const fail=()=>{img.hidden=true};img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail()});
+function sync(){const active=reading.open;shelf.hidden=!active;gallery.hidden=active}
+cards.forEach(c=>c.addEventListener('toggle',sync));sync();select(0)
+})();
+</script>
 </body></html>
