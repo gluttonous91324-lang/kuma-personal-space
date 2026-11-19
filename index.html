@@ -336,6 +336,71 @@
 @media(max-width:380px){.rpg-id-text h1 span{font-size:23px}.rpg-role{font-size:9px;letter-spacing:.03em}.rpg-mark{flex-basis:67px}.rpg-status{gap:3px}.rpg-status i{width:10px}}
 @media(prefers-reduced-motion:reduce){.rpg-entry,.rpg-entry .symbol,.rpg-pointer{animation:none!important;transition:none!important}}
 </style>
+<style id="personal-space-color-system">
+/* Shared editorial palette; preserve artwork and semantic colors within illustrations. */
+:root{--ps-page:#f7f8f4;--ps-paper:#fdfdf9;--ps-surface:#f0f3ed;--ps-selected:#e0e9dc;--ps-line:#d0dbcf;--ps-ink:#293b30;--ps-text:#4e6054;--ps-muted:#677a6c;--ps-icon:#8c9e90;--ps-accent:#3f614b;--ps-hover:#56765f;--ps-shadow:#e6eae2}
+html,body{background:var(--ps-page);color:var(--ps-ink)}
+.top{background:var(--ps-page);border-bottom-color:var(--ps-line);color:var(--ps-text)}
+.led{background:var(--ps-accent)}
+.content-window{background:var(--ps-paper);border-color:#abbcaf;box-shadow:10px 10px 0 var(--ps-shadow)}
+.window-bar{background:var(--ps-surface);color:var(--ps-text);border-bottom-color:var(--ps-line)}
+.dots span{border-color:#91a495;background:var(--ps-paper)}
+.dots span:first-child{background:var(--ps-accent);border-color:var(--ps-accent)}
+.dots span:nth-child(2){background:#9aaf9e;border-color:#9aaf9e}
+.dots span:nth-child(3){background:#d5e0d3;border-color:#b7c7b8}
+.panel h2,.panel h3{color:var(--ps-ink)}
+.panel .section-intro{color:var(--ps-text)}
+.panel .overline,.overline,.interactive-note,.tiny{color:var(--ps-muted)}
+.interactive-note::before{color:var(--ps-accent)}
+.foot{border-top-color:var(--ps-line);color:var(--ps-muted)}
+.rpg-top,.rpg-role,.rpg-en,.rpg-heading,.rpg-footer{color:var(--ps-muted)}
+.rpg-id-text h1{color:var(--ps-ink)}
+.rpg-id-text h1 span,.rpg-statement{color:var(--ps-text)}
+.rpg-mark{border-color:#b5c6b6}
+.rpg-mark::before{background:var(--ps-selected)}
+.rpg-heading,.rpg-footer{border-color:var(--ps-line)}
+.rpg-group-divider,.rpg-status i{background:var(--ps-line)}
+.rpg-status i.active{background:var(--ps-accent)}
+.aside.rpg-aside .rpg-links .rpg-entry{color:var(--ps-muted)}
+.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true]{background:linear-gradient(90deg,var(--ps-selected),rgba(224,233,220,.35) 84%,transparent);color:var(--ps-ink)}
+.aside.rpg-aside .rpg-links .rpg-entry:hover,.aside.rpg-aside .rpg-links .rpg-entry:focus-visible{background-color:var(--ps-surface);color:var(--ps-ink)}
+.rpg-pointer{color:var(--ps-accent)}
+.aside.rpg-aside .rpg-links .rpg-entry .symbol{font-size:25px;color:var(--ps-icon);opacity:.9;font-family:"Segoe UI Symbol","Noto Sans Symbols 2",Georgia,serif}
+.aside.rpg-aside .rpg-links .rpg-entry:hover .symbol,.aside.rpg-aside .rpg-links .rpg-entry:focus-visible .symbol{transform:scale(1.15);color:var(--ps-hover);opacity:1}
+.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true] .symbol{transform:scale(1.35);color:var(--ps-accent);opacity:1}
+#about .timeline-step{border-top-color:var(--ps-line)}
+#about .timeline-step[aria-pressed=true]{border-top-color:var(--ps-accent)}
+#about .timeline-step[aria-pressed=true] .year,#about .timeline-step[aria-pressed=true] .stage{color:var(--ps-accent)}
+#about .timeline-detail{background:linear-gradient(120deg,var(--ps-surface),#e9eee6);border-color:var(--ps-line)}
+#product-shelf{border-top-color:var(--ps-line)}
+.product-icon{background:var(--ps-paper);color:var(--ps-text)}
+.product-icon:hover,.product-icon[aria-pressed=true]{background:var(--ps-paper);border-color:#95ae9a}
+.interest,.work-thumb,.ai-tab{background:var(--ps-surface);border-color:var(--ps-line);color:var(--ps-text)}
+.interest[open],.work-thumb:hover,.ai-tab:hover{background:var(--ps-selected);border-color:#9bad9e}
+.interest summary .label,.work-thumb span{color:var(--ps-ink)}
+.reading-reflection{background:var(--ps-surface);border-left-color:var(--ps-accent)}
+.reading-book[aria-pressed=true] .reading-cover{border-color:var(--ps-accent);box-shadow:0 0 0 2px var(--ps-accent)}
+.select-room{border-color:var(--ps-line)}
+.select-object{border-color:var(--ps-line)}
+.ai-tab[aria-selected=true]{background:var(--ps-accent);border-color:var(--ps-accent);color:var(--ps-paper)}
+.ai-detail,.curiosity-detail{background:var(--ps-surface);border-color:var(--ps-line);border-left-color:var(--ps-accent)}
+.ai-project-flow span{background:var(--ps-selected);border-color:var(--ps-line);color:var(--ps-text)}
+.ai-info-row{border-top-color:var(--ps-line)}
+.ai-info-label strong{color:var(--ps-ink)}
+#travel .travel-log{background:var(--ps-paper)}
+.travel-map{background:var(--ps-surface);border-color:var(--ps-line)}
+.travel-map .land{fill:#dbe4d9;stroke:#b8c9ba}
+.travel-choices button{background:var(--ps-paper);border-color:var(--ps-line);color:var(--ps-text)}
+.travel-choices button[aria-pressed=true]{background:var(--ps-accent);border-color:var(--ps-accent);color:var(--ps-paper)}
+.travel-detail{border-color:var(--ps-line)}
+.travel-detail .travel-kicker,.travel-detail h4{color:var(--ps-accent)}
+#travel .travel-preferences{border-top-color:var(--ps-line)}
+.travel-pref{background:var(--ps-surface);border-color:var(--ps-line);color:var(--ps-muted)}
+.travel-pref:hover,.travel-pref[aria-pressed=true]{background:var(--ps-selected);border-color:#95ae9a;color:var(--ps-accent)}
+.curiosity-detail .small-label,.curiosity-detail h3{color:var(--ps-accent)}
+button:focus-visible{outline-color:var(--ps-accent)}
+@media(max-width:900px){.content-window{box-shadow:7px 7px 0 var(--ps-shadow)}}
+</style>
 </head><body>
 <header class="top"><span><span class="led"></span>Yen Ke*彥克 / PERSONAL SPACE</span><span>TAIPEI · 2026</span></header>
 <div class="shell">
@@ -505,12 +570,12 @@
 <div class="rpg-id-row"><div class="rpg-id-text"><h1>HELLO,<span>Yen Ke*彥克</span></h1><p class="rpg-role">Panasonic · Sales &amp; Systems</p></div><div class="rpg-mark" title="彥克的原創人物線描作品"><img src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div></div>
 <p class="rpg-statement">喜歡美感與秩序，<br>也喜歡把有趣的想法變成真正的作品。</p></div>
 <div class="rpg-heading"><span>SELECT A CHAPTER</span><span id="rpg-counter">01 / 06</span></div>
-<nav class="links rpg-links" aria-label="探索個人介紹主題"><button type="button" class="tile rpg-entry" data-target="about" aria-pressed="true"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">01</span><span class="rpg-entry-text"><span class="name">經歷</span><span class="rpg-en">CAREER</span></span><span class="symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M4 18.5 11 12l7-7"/><circle cx="4" cy="18.5" r="1.7" fill="#fff" stroke="currentColor"/><circle cx="11" cy="12" r="1.7" fill="#fff" stroke="currentColor"/><circle cx="18" cy="5" r="2" fill="none"/><path d="M18 1.5v-1M21.5 5h1" stroke-width=".7"/></svg></span></button>
-<button type="button" class="tile rpg-entry" data-target="ai" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">02</span><span class="rpg-entry-text"><span class="name">AI LAB</span><span class="rpg-en">EXPERIMENTS</span></span><span class="symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 15c4 0 5-7 9-7s5 7 9 7M2 9c4 0 5 7 9 7s5-7 9-7"/><circle cx="11" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="2" cy="9" r=".8" fill="currentColor" stroke="none"/><circle cx="20" cy="15" r=".8" fill="currentColor" stroke="none"/></svg></span></button>
-<button type="button" class="tile rpg-entry" data-target="works" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">03</span><span class="rpg-entry-text"><span class="name">作品</span><span class="rpg-en">COLLECTION</span></span><span class="symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5" opacity=".85"/></svg></span></button>
-<div class="rpg-group-divider" aria-hidden="true"></div><button type="button" class="tile rpg-entry" data-target="lifestyle" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">04</span><span class="rpg-entry-text"><span class="name">生活</span><span class="rpg-en">LIFESTYLE</span></span><span class="symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5.5 9H16v4.5a5.2 5.2 0 0 1-10.5 0V9ZM16 10h1.8a2.6 2.6 0 1 1 0 5.2H16M3 20h17"/><path d="M10 6c-2-2 2-3.5 0-5" opacity=".85"/></svg></span></button>
+<nav class="links rpg-links" aria-label="探索個人介紹主題"><button type="button" class="tile rpg-entry" data-target="about" aria-pressed="true"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">01</span><span class="rpg-entry-text"><span class="name">經歷</span><span class="rpg-en">CAREER</span></span><span class="symbol" aria-hidden="true">⌘</span></button>
+<button type="button" class="tile rpg-entry" data-target="ai" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">02</span><span class="rpg-entry-text"><span class="name">AI LAB</span><span class="rpg-en">EXPERIMENTS</span></span><span class="symbol" aria-hidden="true">⌁</span></button>
+<button type="button" class="tile rpg-entry" data-target="works" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">03</span><span class="rpg-entry-text"><span class="name">作品</span><span class="rpg-en">COLLECTION</span></span><span class="symbol" aria-hidden="true">▧</span></button>
+<div class="rpg-group-divider" aria-hidden="true"></div><button type="button" class="tile rpg-entry" data-target="lifestyle" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">04</span><span class="rpg-entry-text"><span class="name">生活</span><span class="rpg-en">LIFESTYLE</span></span><span class="symbol" aria-hidden="true">❦</span></button>
 <button type="button" class="tile rpg-entry travel-tile" data-target="travel" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">05</span><span class="rpg-entry-text"><span class="name">旅行</span><span class="rpg-en">TRAVEL LOG</span></span><span class="symbol" aria-hidden="true">✈</span></button>
-<button type="button" class="tile rpg-entry" data-target="curiosity" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">06</span><span class="rpg-entry-text"><span class="name">好奇心</span><span class="rpg-en">THE UNKNOWN</span></span><span class="symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M12 2.5c.8 6.1 3.4 8.7 9.5 9.5-6.1.8-8.7 3.4-9.5 9.5-.8-6.1-3.4-8.7-9.5-9.5 6.1-.8 8.7-3.4 9.5-9.5Z"/></svg></span></button></nav>
+<button type="button" class="tile rpg-entry" data-target="curiosity" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">06</span><span class="rpg-entry-text"><span class="name">好奇心</span><span class="rpg-en">THE UNKNOWN</span></span><span class="symbol" aria-hidden="true">✧</span></button></nav>
 <div class="rpg-footer"><span class="rpg-keys">↑ ↓ SELECT &nbsp; ENTER OPEN</span><span class="rpg-touch">SELECT A CHAPTER TO EXPLORE</span><div class="rpg-status" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div>
 </aside>
 </div><footer class="foot"><span>PERSONAL SPACE — NOT A CORPORATE PROFILE</span><span>DESIGNED FOR CONVERSATION, NOT A FORMAL RÉSUMÉ.</span></footer>
