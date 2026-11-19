@@ -170,8 +170,8 @@
         {src:'assets/lifestyle-ideas.svg',alt:'閱讀筆記與思考的概念插畫，尚無實際照片',caption:'思考（插畫）'}
       ],
       exercise:[
-        {src:'assets/jump-rope.webp',alt:'個人使用的跳繩握柄照片',caption:'跳繩器材'},
-        {src:'assets/lifestyle-training.svg',alt:'核心訓練的概念插畫',caption:'核心訓練（插畫）'}
+        {src:'assets/jump-rope.webp',alt:'本人曾長期使用的木柄競技跳繩實拍',caption:'陪伴八年的競技跳繩'},
+        {src:'assets/rope-wear-study.svg',alt:'繩體中央磨薄、芯線外露至斷裂的概念示意',caption:'從磨損到斷裂（示意）'}
       ],
       home:[
         {src:'assets/sus-storage.webp',alt:'親自規劃與整理的 SUS 金屬收納架照片',caption:'SUS 收納實作'},
