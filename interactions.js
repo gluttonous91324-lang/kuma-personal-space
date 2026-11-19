@@ -170,7 +170,7 @@
         {src:'assets/lifestyle-ideas.svg',alt:'閱讀筆記與思考的概念插畫，尚無實際照片',caption:'思考（插畫）'}
       ],
       exercise:[
-        {src:'assets/jump-rope.webp',alt:'本人曾長期使用的木柄競技跳繩實拍',caption:'陪伴八年的競技跳繩'},
+        {src:'assets/jex-broken.webp',alt:'2026 年 10 月 8 日 JEX 木柄競技跳繩斷裂後的實拍，兩個斷端清晰可見',caption:'2026.10.08｜八年的跳繩，正式退役'},
         {src:'assets/fitness-history.webp',alt:'2018 年 10 月個人歷史體脂率紀錄圖表',caption:'2018 年 10 月｜身體數據紀錄'}
       ],
       home:[
