@@ -158,7 +158,7 @@
     if(!cards.length||!imgOne||!imgTwo||!gallery)return;
     const previews={
       overview:[
-        {src:'assets/wardrobe-editorial.svg',alt:'日系男裝外套與襯衫收藏概念插畫',caption:'男裝收藏（示意）'},
+        {src:'assets/wardrobe-display.webp',alt:'衣物、包款與收納架的個人空間陳列',caption:'男裝與包款陳列'},
         {src:'assets/bag-detail.webp',alt:'個人拍攝的男士皮革包款',caption:'皮革包款'}
       ],
       japan:[
@@ -171,10 +171,10 @@
       ],
       exercise:[
         {src:'assets/jump-rope.webp',alt:'本人曾長期使用的木柄競技跳繩實拍',caption:'陪伴八年的競技跳繩'},
-        {src:'assets/rope-wear-study.svg',alt:'繩體中央磨薄、芯線外露至斷裂的概念示意',caption:'從磨損到斷裂（示意）'}
+        {src:'assets/fitness-history.webp',alt:'2018 年 10 月個人歷史體脂率紀錄圖表',caption:'2018 年 10 月｜身體數據紀錄'}
       ],
       home:[
-        {src:'assets/sus-storage.webp',alt:'親自規劃與整理的 SUS 金屬收納架照片',caption:'SUS 收納實作'},
+        {src:'assets/sus-plan-2018.webp',alt:'2018 年 10 月 SUS 架配置規劃原圖',caption:'2018 年｜SUS 架配置規劃'},
         {src:'assets/room-style.webp',alt:'個人房間空間配置參考照片',caption:'居家配置'}
       ]
     };
