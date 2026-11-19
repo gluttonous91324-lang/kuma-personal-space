@@ -403,9 +403,11 @@ button:focus-visible{outline-color:var(--ps-accent)}
 </style>
 <style id="quiet-chapter-layout">
 /* Visual-first hierarchy. Native details preserve access to the full project descriptions. */
-.aside.rpg-aside .rpg-links .rpg-entry .symbol{font-family:inherit;font-weight:400;font-size:22px;color:var(--ps-icon);opacity:.78}
-.aside.rpg-aside .rpg-links .rpg-entry:hover .symbol,.aside.rpg-aside .rpg-links .rpg-entry:focus-visible .symbol{transform:scale(1.15);color:var(--ps-hover);opacity:1}
-.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true] .symbol{transform:scale(1.35);color:var(--ps-accent);opacity:1}
+.aside.rpg-aside .rpg-links .rpg-entry{grid-template-columns:12px 22px minmax(0,1fr);min-height:43px;padding-right:14px}
+.aside.rpg-aside .rpg-links .rpg-entry .name{display:block;transform-origin:left center;transform:scale(1);transition:transform .26s cubic-bezier(.2,.75,.25,1),color .22s}
+.aside.rpg-aside .rpg-links .rpg-entry:hover .name,.aside.rpg-aside .rpg-links .rpg-entry:focus-visible .name{transform:scale(1.035);color:var(--ps-hover)}
+.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true] .name{transform:scale(1.09);color:var(--ps-accent)}
+.aside.rpg-aside .rpg-links .rpg-entry[aria-pressed=true] .rpg-en{color:var(--ps-accent)}
 .panel> .overline,.travel-header .overline{display:none}
 .panel .interactive-note{display:none}
 .panel h2{margin:0 0 11px}
@@ -639,12 +641,12 @@ button:focus-visible{outline-color:var(--ps-accent)}
 <div class="rpg-id-row"><div class="rpg-id-text"><h1>HELLO,<span>Yen Ke*彥克</span></h1><p class="rpg-role">Panasonic · Sales &amp; Systems</p></div><div class="rpg-mark" title="彥克的原創人物線描作品"><img src="assets/head-art.webp" alt="彥克原創線描人物的頭肩輪廓"></div></div>
 <p class="rpg-statement">喜歡美感與秩序，<br>也喜歡把有趣的想法變成真正的作品。</p></div>
 <div class="rpg-heading"><span>SELECT A CHAPTER</span><span id="rpg-counter">01 / 06</span></div>
-<nav class="links rpg-links" aria-label="探索個人介紹主題"><button type="button" class="tile rpg-entry" data-target="about" aria-pressed="true"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">01</span><span class="rpg-entry-text"><span class="name">經歷</span><span class="rpg-en">CAREER</span></span><span class="symbol" aria-hidden="true">⌘</span></button>
-<button type="button" class="tile rpg-entry" data-target="ai" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">02</span><span class="rpg-entry-text"><span class="name">AI LAB</span><span class="rpg-en">EXPERIMENTS</span></span><span class="symbol" aria-hidden="true">⌁</span></button>
-<button type="button" class="tile rpg-entry" data-target="works" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">03</span><span class="rpg-entry-text"><span class="name">作品</span><span class="rpg-en">COLLECTION</span></span><span class="symbol" aria-hidden="true">▧</span></button>
-<div class="rpg-group-divider" aria-hidden="true"></div><button type="button" class="tile rpg-entry" data-target="lifestyle" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">04</span><span class="rpg-entry-text"><span class="name">生活</span><span class="rpg-en">LIFESTYLE</span></span><span class="symbol" aria-hidden="true">❦</span></button>
-<button type="button" class="tile rpg-entry travel-tile" data-target="travel" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">05</span><span class="rpg-entry-text"><span class="name">旅行</span><span class="rpg-en">TRAVEL LOG</span></span><span class="symbol" aria-hidden="true">✈</span></button>
-<button type="button" class="tile rpg-entry" data-target="curiosity" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">06</span><span class="rpg-entry-text"><span class="name">好奇心</span><span class="rpg-en">THE UNKNOWN</span></span><span class="symbol" aria-hidden="true">✧</span></button></nav>
+<nav class="links rpg-links" aria-label="探索個人介紹主題"><button type="button" class="tile rpg-entry" data-target="about" aria-pressed="true"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">01</span><span class="rpg-entry-text"><span class="name">經歷</span><span class="rpg-en">CAREER</span></span></button>
+<button type="button" class="tile rpg-entry" data-target="ai" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">02</span><span class="rpg-entry-text"><span class="name">AI LAB</span><span class="rpg-en">EXPERIMENTS</span></span></button>
+<button type="button" class="tile rpg-entry" data-target="works" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">03</span><span class="rpg-entry-text"><span class="name">作品</span><span class="rpg-en">COLLECTION</span></span></button>
+<div class="rpg-group-divider" aria-hidden="true"></div><button type="button" class="tile rpg-entry" data-target="lifestyle" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">04</span><span class="rpg-entry-text"><span class="name">生活</span><span class="rpg-en">LIFESTYLE</span></span></button>
+<button type="button" class="tile rpg-entry travel-tile" data-target="travel" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">05</span><span class="rpg-entry-text"><span class="name">旅行</span><span class="rpg-en">TRAVEL LOG</span></span></button>
+<button type="button" class="tile rpg-entry" data-target="curiosity" aria-pressed="false"><span class="rpg-pointer" aria-hidden="true">▸</span><span class="number">06</span><span class="rpg-entry-text"><span class="name">好奇心</span><span class="rpg-en">THE UNKNOWN</span></span></button></nav>
 <div class="rpg-footer"><span class="rpg-keys">↑ ↓ SELECT &nbsp; ENTER OPEN</span><span class="rpg-touch">SELECT A CHAPTER TO EXPLORE</span><div class="rpg-status" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div>
 </aside>
 </div><footer class="foot"><span>PERSONAL SPACE — NOT A CORPORATE PROFILE</span><span>DESIGNED FOR CONVERSATION, NOT A FORMAL RÉSUMÉ.</span></footer>
